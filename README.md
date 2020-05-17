@@ -1,2 +1,2 @@
 # radiooooo-qt
-Client for radiooooo.app
+Client for [Radiooooo](https://radiooooo.app/)
