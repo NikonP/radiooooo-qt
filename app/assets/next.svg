@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
+   sodipodi:docname="next.svg"
+   id="svg4"
+   version="1.1"
+   width="24"
+   viewBox="0 0 24 24"
+   height="24">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="1"
+     inkscape:window-y="34"
+     inkscape:window-x="0"
+     inkscape:cy="11.195486"
+     inkscape:cx="11.613867"
+     inkscape:zoom="35.375"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="1022"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="stroke-width:1.93248"
+     id="path2"
+     d="M 3.4584281,21.449839 14.608851,13.584636 c 1.08219,-0.772993 1.08219,-2.396279 0,-3.149947 L 3.4584281,2.5501615 C 2.163665,1.6612196 0.40510608,2.5694863 0.40510608,4.134797 v 15.730406 c 0,1.565311 1.75855892,2.473577 3.05332202,1.584636 z M 19.729929,2.3375884 V 21.662412 c 0,1.062865 0.869617,1.932482 1.932483,1.932482 1.062865,0 1.932482,-0.869617 1.932482,-1.932482 V 2.3375884 c 0,-1.0628653 -0.869617,-1.93248232 -1.932482,-1.93248232 -1.062866,0 -1.932483,0.86961702 -1.932483,1.93248232 z" />
+</svg>
