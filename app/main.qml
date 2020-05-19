@@ -60,7 +60,7 @@ ApplicationWindow {
             anchors.top: audioPlayer.bottom
             anchors.topMargin: 5
 
-            onUpdateSetup: {
+            onUpdateConfig: {
                 console.log(param, value, state)
             }
         }

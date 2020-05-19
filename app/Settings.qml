@@ -14,7 +14,7 @@ Frame {
     anchors.top: parent.top
     anchors.topMargin: 0
 
-    signal updateSetup(string param, string value, bool state)
+    signal updateConfig(string param, string value, bool state)
 
     // some countries for quick setup
     // <ISO-3166-1 Alpha-3>: <name of the country>
@@ -28,7 +28,7 @@ Frame {
     property var moodsArr: ["Slow", "Fast", "Weird"]
 
     property var config: {
-        "decades": ["1980"],    // select 1980 by default
+        "decades": ["1980"],  // select 1980 by default
         "countries": ["GBR"], // select United Kingdom by default
         "moods": ["Fast"]     // select fast by default
     }
@@ -100,7 +100,7 @@ Frame {
                         checked: model.checked
                         onCheckedChanged: {
                             model.checked = checked
-                            updateSetup("decades", model.name, checked)
+                            updateConfig("decades", model.name, checked)
                         }
                     }
                 }
@@ -125,7 +125,7 @@ Frame {
                         checked: model.checked
                         onCheckedChanged: {
                             model.checked = checked
-                            updateSetup("countries", model.code, checked)
+                            updateConfig("countries", model.code, checked)
                         }
                     }
                 }
@@ -150,7 +150,7 @@ Frame {
                         checked: model.checked
                         onCheckedChanged: {
                             model.checked = checked
-                            updateSetup("moods", model.name.toUpperCase(), checked)
+                            updateConfig("moods", model.name.toUpperCase(), checked)
                         }
                     }
                 }
@@ -160,7 +160,7 @@ Frame {
         Component.onCompleted: {
             for(var key in config) {
                 for(var i = 0; i < config[key].length; i++) {
-                    updateSetup(key, config[key][i].toUpperCase(), true);
+                    updateConfig(key, config[key][i].toUpperCase(), true);
                 }
             }
         }
