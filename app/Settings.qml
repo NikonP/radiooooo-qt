@@ -27,15 +27,11 @@ Frame {
     }
     property var moodsArr: ["Slow", "Fast", "Weird"]
 
-    property var config: {
-        "decades": ["1980"],  // select 1980 by default
-        "countries": ["GBR"], // select United Kingdom by default
-        "moods": ["Fast"]     // select fast by default
-    }
+    property var config
 
     function loadConfig() {
-        // call cpp fun to laod json
-        // set return to config
+        config = JSON.parse(radio.loadConfig());
+        console.log(config);
     }
 
     GroupBox {
@@ -158,11 +154,8 @@ Frame {
         }
 
         Component.onCompleted: {
-            for(var key in config) {
-                for(var i = 0; i < config[key].length; i++) {
-                    updateConfig(key, config[key][i].toUpperCase(), true);
-                }
-            }
+            loadConfig()
+            console.log(config)
         }
     }
 }

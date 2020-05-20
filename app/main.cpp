@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QQuickStyle>
 #include "radiooooo.h"
 
@@ -20,6 +21,7 @@ int main(int argc, char *argv[])
 
     Radiooooo radio;
     radio.loadConfig();
+    engine.rootContext()->setContextProperty("radio", &radio);
 
     engine.load(url);
 

@@ -6,7 +6,7 @@ Configurator::Configurator(QObject *parent) : QObject(parent)
 
 }
 
-QJsonDocument Configurator::configToJson(QHash<QString, QVector<QString>> c) {
+QJsonDocument Configurator::configToJson(QMap<QString, QVector<QString>> c) {
     QJsonObject jsonObj;
 
     for(QString key : c.keys()) {
@@ -29,9 +29,9 @@ void Configurator::initDirs() {
 
 void Configurator::initConfig() {
     // init config with dafault values
-    config["decades"].push_back("1980");
-    config["countries"].push_back("GBR");
-    config["moods"].push_back("FAST");
+    config["decades"].push_back("1980");  // select 1980 by default
+    config["countries"].push_back("GBR"); // select United Kingdom by default
+    config["moods"].push_back("Fast");    // select fast by default
 
     // save default config
     saveConfig();
@@ -49,7 +49,7 @@ void Configurator::saveConfig() {
 }
 
 void Configurator::loadConfig() {
-    QHash<QString, QVector<QString>> loadedConfig;
+    QMap<QString, QVector<QString>> loadedConfig;
 
     QFile configFile(configFilePath);
     if (!configFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -64,4 +64,15 @@ void Configurator::loadConfig() {
     }
 
     config = loadedConfig;
+}
+
+QMap<QString, QVector<QString>>Configurator::getConfig() {
+    return config;
+}
+
+QString Configurator::getConfigStr() {
+    QJsonDocument jsonDoc = configToJson(config);
+    QString jsonString = jsonDoc.toJson();
+    qDebug() << jsonString;
+    return jsonString;
 }

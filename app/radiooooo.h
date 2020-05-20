@@ -11,7 +11,6 @@ class Radiooooo : public QObject
     Q_OBJECT
 public:
     explicit Radiooooo(QObject *parent = nullptr);
-    void loadConfig();
 
 private:
     Configurator cfg;
@@ -20,6 +19,7 @@ private:
 signals:
 
 public slots:
+    QString loadConfig();
     //void playPause(bool state);
     //void nextSong();
     //void updateConfig(QString param, QString value, bool state);
