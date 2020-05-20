@@ -56,7 +56,7 @@ Frame {
             Component.onCompleted: {
                 for(var code in quickCountries) {
                     var name = quickCountries[code];
-                    var isSelected = (config["countries"].includes(code));
+                    var isSelected = (config["isocodes"].includes(code));
                     countriesModel.append({"name": name, "code": code, "checked": isSelected});
                 }
             }
@@ -121,7 +121,7 @@ Frame {
                         checked: model.checked
                         onCheckedChanged: {
                             model.checked = checked
-                            updateConfig("countries", model.code, checked)
+                            updateConfig("isocodes", model.code, checked)
                         }
                     }
                 }

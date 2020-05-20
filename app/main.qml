@@ -40,7 +40,7 @@ ApplicationWindow {
             }
 
             onPauseChanged: {
-                console.log(state)
+                radio.playPause(state)
             }
 
             onNextSong: {

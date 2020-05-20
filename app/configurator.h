@@ -17,6 +17,9 @@ class Configurator : public QObject
     Q_OBJECT
 public:
     explicit Configurator(QObject *parent = nullptr);
+
+    typedef QMap<QString, QList<QString>> ConfigStorage;
+
     void initDirs();
     void initConfig();
     void saveConfig();
@@ -27,8 +30,10 @@ public:
     const int minDecade = 1910;
     const int maxDecade = 2020;
 
-    QMap<QString, QList<QString>> getConfig();
+    ConfigStorage getConfig();
     QString getConfigStr();
+    QJsonObject getConfigJson();
+    QJsonDocument configToJson(ConfigStorage c);
 
     QString appDir = ".radiooooo-qt";
     QString appDirPath = QDir::homePath() + "/" + appDir;
@@ -37,8 +42,7 @@ public:
     QString mpegDirPath = appDirPath + "/" + "mpeg-files";
 
 private:
-    QMap<QString, QList<QString>> config;
-    QJsonDocument configToJson(QMap<QString, QList<QString>> c);
+    ConfigStorage config;
 
 signals:
 
