@@ -14,7 +14,7 @@ Frame {
     anchors.top: parent.top
     anchors.topMargin: 0
 
-    signal updateConfig(string param, string value, bool state)
+    signal updateConfig(string param, string value, bool enable)
 
     // some countries for quick setup
     // <ISO-3166-1 Alpha-3>: <name of the country>
@@ -146,7 +146,7 @@ Frame {
                         checked: model.checked
                         onCheckedChanged: {
                             model.checked = checked
-                            updateConfig("moods", model.name.toUpperCase(), checked)
+                            updateConfig("moods", model.name, checked)
                         }
                     }
                 }
@@ -155,7 +155,6 @@ Frame {
 
         Component.onCompleted: {
             loadConfig()
-            console.log(config)
         }
     }
 }

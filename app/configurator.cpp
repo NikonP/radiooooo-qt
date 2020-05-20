@@ -6,7 +6,7 @@ Configurator::Configurator(QObject *parent) : QObject(parent)
 
 }
 
-QJsonDocument Configurator::configToJson(QMap<QString, QVector<QString>> c) {
+QJsonDocument Configurator::configToJson(QMap<QString, QList<QString>> c) {
     QJsonObject jsonObj;
 
     for(QString key : c.keys()) {
@@ -49,7 +49,7 @@ void Configurator::saveConfig() {
 }
 
 void Configurator::loadConfig() {
-    QMap<QString, QVector<QString>> loadedConfig;
+    QMap<QString, QList<QString>> loadedConfig;
 
     QFile configFile(configFilePath);
     if (!configFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -66,7 +66,17 @@ void Configurator::loadConfig() {
     config = loadedConfig;
 }
 
-QMap<QString, QVector<QString>>Configurator::getConfig() {
+void Configurator::updateConfig(QString param, QString value, bool enable) {
+    if(config[param].contains(value) && !enable) {
+        config[param].removeAll(value);
+    } else if(!config[param].contains(value) && enable) {
+        config[param].push_back(value);
+    }
+
+    saveConfig();
+}
+
+QMap<QString, QList<QString>>Configurator::getConfig() {
     return config;
 }
 

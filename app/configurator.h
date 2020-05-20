@@ -21,12 +21,13 @@ public:
     void initConfig();
     void saveConfig();
     void loadConfig();
+    void updateConfig(QString param, QString value, bool enable);
 
     const QList<QString> moods = {"Fast", "Slow", "Weird"};
     const int minDecade = 1910;
     const int maxDecade = 2020;
 
-    QMap<QString, QVector<QString>> getConfig();
+    QMap<QString, QList<QString>> getConfig();
     QString getConfigStr();
 
     QString appDir = ".radiooooo-qt";
@@ -36,8 +37,8 @@ public:
     QString mpegDirPath = appDirPath + "/" + "mpeg-files";
 
 private:
-    QMap<QString, QVector<QString>> config;
-    QJsonDocument configToJson(QMap<QString, QVector<QString>> c);
+    QMap<QString, QList<QString>> config;
+    QJsonDocument configToJson(QMap<QString, QList<QString>> c);
 
 signals:
 

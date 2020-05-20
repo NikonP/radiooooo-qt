@@ -61,7 +61,7 @@ ApplicationWindow {
             anchors.topMargin: 5
 
             onUpdateConfig: {
-                console.log(param, value, state)
+                radio.updateConfig(param, value, enable);
             }
         }
     }

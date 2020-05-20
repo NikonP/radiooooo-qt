@@ -20,6 +20,7 @@ signals:
 
 public slots:
     QString loadConfig();
+    void updateConfig(QString param, QString value, bool enable);
     //void playPause(bool state);
     //void nextSong();
     //void updateConfig(QString param, QString value, bool state);

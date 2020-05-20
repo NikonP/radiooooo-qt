@@ -22,3 +22,7 @@ QString Radiooooo::loadConfig() {
     QString jsonString = cfg.getConfigStr();
     return jsonString;
 }
+
+void Radiooooo::updateConfig(QString param, QString value, bool enable) {
+    cfg.updateConfig(param, value, enable);
+}
