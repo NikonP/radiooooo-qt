@@ -36,6 +36,7 @@ ColumnLayout {
                 id: statusText
                 text: qsTr("")
                 clip: true
+                fontSizeMode: Text.HorizontalFit
                 wrapMode: Text.Wrap
                 width: parent.width
                 font.pointSize: 20
