@@ -37,7 +37,6 @@ ColumnLayout {
                 text: qsTr("")
                 clip: true
                 fontSizeMode: Text.HorizontalFit
-                wrapMode: Text.Wrap
                 width: parent.width
                 font.pointSize: 20
             }
@@ -68,18 +67,11 @@ ColumnLayout {
                 nextSong()
             }
         }
-
-
-    }
-
-    ProgressBar {
-        id: progressBar
-        value: playbackProgress
-        Layout.fillWidth: true
     }
 
     Slider {
         id: volume
+        Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
         stepSize: 1
         wheelEnabled: true
         from: 0
@@ -90,5 +82,11 @@ ColumnLayout {
         onMoved: {
             volumeChanged(value)
         }
+    }
+
+    ProgressBar {
+        id: progressBar
+        value: playbackProgress
+        Layout.fillWidth: true
     }
 }

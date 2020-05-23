@@ -88,88 +88,84 @@ Frame {
             }
         }
 
-        Row {
-            id: rl
-            spacing: 20
-            Column {
-                id: cl
+        Column {
+            id: cl
 
-                ComboBox {
-                    id: decades
-                    width: 200
-                    Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                    model: decadesModel
-                    displayText: "Select decades"
+            ComboBox {
+                id: decades
+                width: 200
+                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                model: decadesModel
+                displayText: "Select decades"
 
-                    delegate: Item {
+                delegate: Item {
+                    width: parent.width
+                    implicitHeight: decadesCD.implicitHeight
+
+                    CheckDelegate {
+                        id: decadesCD
                         width: parent.width
-                        implicitHeight: decadesCD.implicitHeight
-
-                        CheckDelegate {
-                            id: decadesCD
-                            width: parent.width
-                            text: model.name
-                            highlighted: decades.highlightedIndex === index
-                            checked: model.checked
-                            onCheckedChanged: {
-                                model.checked = checked
-                                updateConfig("decades", model.name, checked)
-                            }
+                        text: model.name
+                        highlighted: decades.highlightedIndex === index
+                        checked: model.checked
+                        onCheckedChanged: {
+                            model.checked = checked
+                            updateConfig("decades", model.name, checked)
                         }
                     }
                 }
-
-                ComboBox {
-                    id: countries
-                    width: 200
-                    Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                    model: countriesModel
-                    displayText: "Select Countries"
-
-                    delegate: Item {
-                        width: parent.width
-                        implicitHeight: countriesCD.implicitHeight
-
-                        CheckDelegate {
-                            id: countriesCD
-                            width: parent.width
-                            text: model.name
-                            highlighted: countries.highlightedIndex === index
-                            checked: model.checked
-                            onCheckedChanged: {
-                                model.checked = checked
-                                updateConfig("isocodes", model.code, checked)
-                            }
-                        }
-                    }
-                }
-
-                ComboBox {
-                    id: moods
-                    width: 200
-                    Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                    model: moodsModel
-                    displayText: "Select moods"
-
-                    delegate: Item {
-                        width: parent.width
-                        implicitHeight: moodsCD.implicitHeight
-
-                        CheckDelegate {
-                            id: moodsCD
-                            width: parent.width
-                            text: model.name
-                            highlighted: moods.highlightedIndex === index
-                            checked: model.checked
-                            onCheckedChanged: {
-                                model.checked = checked
-                                updateConfig("moods", model.name, checked)
-                            }
-                        }
-                    }
-                }
-
             }
+
+            ComboBox {
+                id: countries
+                width: 200
+                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                model: countriesModel
+                displayText: "Select Countries"
+
+                delegate: Item {
+                    width: parent.width
+                    implicitHeight: countriesCD.implicitHeight
+
+                    CheckDelegate {
+                        id: countriesCD
+                        width: parent.width
+                        text: model.name
+                        highlighted: countries.highlightedIndex === index
+                        checked: model.checked
+                        onCheckedChanged: {
+                            model.checked = checked
+                            updateConfig("isocodes", model.code, checked)
+                        }
+                    }
+                }
+            }
+
+            ComboBox {
+                id: moods
+                width: 200
+                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                model: moodsModel
+                displayText: "Select moods"
+
+                delegate: Item {
+                    width: parent.width
+                    implicitHeight: moodsCD.implicitHeight
+
+                    CheckDelegate {
+                        id: moodsCD
+                        width: parent.width
+                        text: model.name
+                        highlighted: moods.highlightedIndex === index
+                        checked: model.checked
+                        onCheckedChanged: {
+                            model.checked = checked
+                            updateConfig("moods", model.name, checked)
+                        }
+                    }
+                }
+            }
+
         }
 
 
