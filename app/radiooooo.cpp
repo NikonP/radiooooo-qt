@@ -74,7 +74,7 @@ QJsonObject Radiooooo::getSongInfo() {
     // use all if none selected
     if(config["decades"].length() == 0) {
         for(int d = cfg->minDecade; d <= cfg->maxDecade; d+=10) {
-            config["decades"].push_back(QString(d));
+            config["decades"].push_back(QString::number(d));
         }
     }
 
