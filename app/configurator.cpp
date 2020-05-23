@@ -82,6 +82,5 @@ Configurator::ConfigStorage Configurator::getConfig() {
 QString Configurator::getConfigStr() {
     QJsonDocument jsonDoc = configToJson(config);
     QString jsonString = jsonDoc.toJson();
-    qDebug() << jsonString;
     return jsonString;
 }

@@ -21,6 +21,14 @@ ApplicationWindow {
     maximumHeight: 480
     title: qsTr("Radiooooo")
 
+    Connections {
+        target: radio
+
+        onUpdateProgressBar: {
+            audioPlayer.setPlaybackProgress(progress)
+        }
+    }
+
     Frame {
         id: base
         anchors.fill: parent
@@ -44,7 +52,7 @@ ApplicationWindow {
             }
 
             onNextSong: {
-                console.log("next song")
+                radio.nextSong()
             }
         }
 

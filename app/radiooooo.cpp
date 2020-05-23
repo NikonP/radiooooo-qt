@@ -6,6 +6,10 @@ Radiooooo::Radiooooo(QObject *parent) : QObject(parent)
 {
     cfg = new Configurator();
     mediaPlayer = new QMediaPlayer();
+    connect(mediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(updateProgress(qint64)));
+    connect(mediaPlayer, SIGNAL(durationChanged(qint64)), this, SLOT(durationChanged(qint64)));
+    connect(mediaPlayer, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(stateChanged(QMediaPlayer::State)));
+
     netManager = new QNetworkAccessManager(this);
 }
 
@@ -103,6 +107,10 @@ QJsonObject Radiooooo::getSongInfo() {
 }
 
 bool Radiooooo::saveFile(QString path, QByteArray data) {
+    if(QFileInfo(path).exists()) {
+        return true;
+    }
+
     QFile binFile(path);
 
     if (!binFile.open(QIODevice::WriteOnly)) {
@@ -114,7 +122,7 @@ bool Radiooooo::saveFile(QString path, QByteArray data) {
     return true;
 }
 
-bool Radiooooo::downloadFile(QString filename, QString url) {
+QString Radiooooo::downloadFile(QString filename, QString url) {
     QJsonObject jsonObj;
     QNetworkRequest request;
     QEventLoop loop;
@@ -126,21 +134,25 @@ bool Radiooooo::downloadFile(QString filename, QString url) {
     loop.exec();
 
     if(reply->error() != QNetworkReply::NoError) {
-        return false;
+        return "error";
     }
 
     QByteArray data = reply->readAll();
-    bool success = saveFile(cfg->audioDirPath + "/" + filename, data);
+    QString filePath = cfg->audioDirPath + "/" + filename;
+    bool success = saveFile(filePath, data);
+
+    if(!success) {
+        filePath = "error";
+    }
 
     reply->deleteLater();
-    return success;
+    return filePath;
 }
 
-void Radiooooo::playLoop() {
-    // get song
-    // wait while playing
-    // ...
-    // restart loop
+void Radiooooo::playNext() {
+    mediaPlayer->stop();
+    state = IDLE;
+
     QJsonObject songInfo = getSongInfo();
     if(songInfo.keys().contains("error")) {
         qDebug() << "error: " << songInfo["error"];
@@ -158,47 +170,60 @@ void Radiooooo::playLoop() {
     filename += ".ogg";
 
     QString oggUrl = songInfo["links"].toObject()["ogg"].toString();
-    qDebug() << title;
-    qDebug() << artist;
-    qDebug() << year;
-    qDebug() << oggUrl;
+    if(oggUrl == "") {
+        return;
+    }
 
-    downloadFile(filename, oggUrl);
-
-    if(oggUrl == "" ) {
+    QString filePath = downloadFile(filename, oggUrl);
+    if(filePath == "error") {
         return;
     }
 
     state = PLAYING;
-    try {
-        while(true) {
+    mediaPlayer->setMedia(QUrl::fromLocalFile(filePath));
+    mediaPlayer->setVolume(50);
+    mediaPlayer->play();
+}
 
-            break;
-        }
-    } catch (const QString err) {
-        // set error flag
+void Radiooooo::stateChanged(QMediaPlayer::State playerState) {
+    if(playerState == QMediaPlayer::StoppedState && state != IDLE) {
+        playNext();
     }
 }
 
+void Radiooooo::durationChanged(qint64 newDuration) {
+    audioDuration = newDuration;
+}
+
+void Radiooooo::updateProgress(qint64 pos) {
+    double progress;
+    if(audioDuration == 0) {
+        progress = 0;
+    } else {
+        progress = (double) pos / (double) audioDuration;
+    }
+
+    updateProgressBar(progress);
+}
+
 void Radiooooo::playPause(bool play) {
-    playLoop();
     if(play) {
         if(state == IDLE) {
-            // download
-            // play
+            playNext();
         } else if(state == PAUSED) {
-            // continue
-        } else {
-            // do nothing?
+            state = PLAYING;
+            mediaPlayer->play();
         }
     } else {
         if(state == PLAYING) {
-            // pause
+            state = PAUSED;
+            mediaPlayer->pause();
         }
     }
 }
 
 void Radiooooo::nextSong() {
-    // download
-    // play
+    if(state == PLAYING) {
+        playNext();
+    }
 }

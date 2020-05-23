@@ -17,6 +17,7 @@
 #include <QJsonDocument>
 #include <QByteArray>
 #include <QRegExp>
+#include <QMediaContent>
 #include "configurator.h"
 
 class Radiooooo : public QObject
@@ -32,6 +33,8 @@ private:
     const QString getCodesUrl = baseAPI + "/country/mood?decade=";
     const QString getSongUrl = baseAPI + "/play";
 
+    qint64 audioDuration = 0;
+
     Configurator *cfg;
     QMediaPlayer *mediaPlayer;
     QNetworkAccessManager *netManager;
@@ -39,11 +42,11 @@ private:
 
     QJsonObject getSongInfo(); // returns json data from Radiooooo (song name, url, etc)
     QJsonObject getCountries(QString decade); // gets available isocodes
-    bool downloadFile(QString path, QString url); // downloads audio file from url, returns true if success
+    QString downloadFile(QString path, QString url); // downloads audio file from url, returns true if success
     bool saveFile(QString path, QByteArray data); // saves audio file, returns true if success
 
 signals:
-
+    void updateProgressBar(double progress);
 
 public slots:
     QString loadConfig(); // loading config from json file
@@ -51,7 +54,11 @@ public slots:
 
     void playPause(bool play);
     void nextSong();
-    void playLoop();
+    void playNext();
+
+    void stateChanged(QMediaPlayer::State playerState);
+    void durationChanged(qint64 newDuration);
+    void updateProgress(qint64 pos);
 
 };
 

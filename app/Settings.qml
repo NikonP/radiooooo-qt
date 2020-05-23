@@ -31,7 +31,6 @@ Frame {
 
     function loadConfig() {
         config = JSON.parse(radio.loadConfig());
-        console.log(config);
     }
 
     GroupBox {
