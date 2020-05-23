@@ -14,6 +14,7 @@ ColumnLayout {
 
     signal pauseChanged(bool state)
     signal nextSong()
+    signal volumeChanged(int volume)
 
     function setStatus(newStatus) {
         statusText.text = qsTr(newStatus)
@@ -37,7 +38,7 @@ ColumnLayout {
                 clip: true
                 wrapMode: Text.Wrap
                 width: parent.width
-                font.pixelSize: 22
+                font.pointSize: 20
             }
         }
 
@@ -74,5 +75,19 @@ ColumnLayout {
         id: progressBar
         value: playbackProgress
         Layout.fillWidth: true
+    }
+
+    Slider {
+        id: volume
+        stepSize: 1
+        wheelEnabled: true
+        from: 0
+        to: 100
+        value: 70
+        orientation: Qt.Horizontal
+
+        onMoved: {
+            volumeChanged(value)
+        }
     }
 }

@@ -57,6 +57,7 @@ public slots:
     void playPause(bool play);
     void nextSong();
     void playNext();
+    void setVolume(int volume);
 
     void stateChanged(QMediaPlayer::State playerState);
     void durationChanged(qint64 newDuration);

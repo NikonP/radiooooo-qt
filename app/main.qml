@@ -58,6 +58,10 @@ ApplicationWindow {
             onNextSong: {
                 radio.nextSong()
             }
+
+            onVolumeChanged: {
+                radio.setVolume(volume)
+            }
         }
 
         Settings {

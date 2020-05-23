@@ -165,7 +165,7 @@ void Radiooooo::playNext() {
     QString artist = songInfo["artist"].toString();
     QString year = songInfo["year"].toString();
 
-    nowPlaying = title + " by " + artist;
+    nowPlaying = QString("\"%1\" by \"%2\". %3").arg(title).arg(artist).arg(year);
 
     QString invalidChars = QRegExp::escape("\\/:*?\"\'<>| ");
 
@@ -209,6 +209,10 @@ void Radiooooo::updateProgress(qint64 pos) {
     }
 
     updateProgressBar(progress);
+}
+
+void Radiooooo::setVolume(int volume) {
+    mediaPlayer->setVolume(volume);
 }
 
 void Radiooooo::playPause(bool play) {
