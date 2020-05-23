@@ -44,7 +44,12 @@ Frame {
             id: decadesModel
             Component.onCompleted: {
                 for(var i = 1910; i <= 2020; i+=10){
-                    var isSelected = config["decades"].includes(i.toString());
+
+                    var isSelected = false;
+                    if("decades" in config) {
+                        isSelected = config["decades"].includes(i.toString());
+                    }
+
                     decadesModel.append({"name": i.toString(), "checked": isSelected});
                 }
             }
@@ -56,7 +61,12 @@ Frame {
             Component.onCompleted: {
                 for(var code in quickCountries) {
                     var name = quickCountries[code];
-                    var isSelected = (config["isocodes"].includes(code));
+
+                    var isSelected = false;
+                    if("isocodes" in config) {
+                        isSelected = (config["isocodes"].includes(code));
+                    }
+
                     countriesModel.append({"name": name, "code": code, "checked": isSelected});
                 }
             }
@@ -68,7 +78,12 @@ Frame {
             Component.onCompleted: {
                 for(var i = 0; i < moodsArr.length; i++) {
                     var mood = moodsArr[i];
-                    var isSelected = (config["moods"].includes(mood));
+
+                    var isSelected = false;
+                    if("moods" in config) {
+                        isSelected = (config["moods"].includes(mood));
+                    }
+
                     moodsModel.append({"name": mood, "checked": isSelected});
                 }
             }

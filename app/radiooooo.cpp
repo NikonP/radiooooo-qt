@@ -32,14 +32,13 @@ void Radiooooo::updateConfig(QString param, QString value, bool enable) {
 QJsonObject Radiooooo::getCountries(QString decade) {
     QJsonObject jsonObj;
     QNetworkRequest request;
-
     QEventLoop loop;
-    connect(netManager, SIGNAL(finished(QNetworkReply*)), &loop, SLOT(quit()));
 
     request.setUrl(QUrl(getCodesUrl + decade));
     request.setRawHeader("content-type", "application/json");
-    QNetworkReply *reply = netManager->get(request);
 
+    QNetworkReply *reply = netManager->get(request);
+    connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
     loop.exec();
 
     if(reply->error() != QNetworkReply::NoError) {
@@ -50,14 +49,13 @@ QJsonObject Radiooooo::getCountries(QString decade) {
     QString jsonStr = reply->readAll();
     jsonObj = QJsonDocument().fromJson(jsonStr.toUtf8()).object();
 
+    reply->deleteLater();
     return jsonObj;
 }
 
 QJsonObject Radiooooo::getSongInfo() {
     QNetworkRequest request;
-
     QEventLoop loop;
-    connect(netManager, SIGNAL(finished(QNetworkReply*)), &loop, SLOT(quit()));
 
     request.setUrl(QUrl(getSongUrl));
     request.setRawHeader("content-type", "application/json");
@@ -77,20 +75,11 @@ QJsonObject Radiooooo::getSongInfo() {
     }
 
     // get all available if none selected
-    if(config["countries"].length() == 0) {
-        QSet<QVariant> uniqCodes;
-        for(QString d : config["decades"]) {
-            QJsonObject isocodes = getCountries(d);
-            for(QString m : config["moods"]) {
-                uniqCodes = isocodes[m].toArray().toVariantList().toSet();
-            }
-        }
-
-        for(QVariant c : uniqCodes) {
-            config["countries"].push_back(c.toString());
-        }
+    if(config["isocodes"].length() == 0 || config["isocodes"].contains("any")) {
+        config["isocodes"] = cfg->allCountries;
     }
 
+    // api requires uppercase
     for(QString& m : config["moods"]) {
         m = m.toUpper();
     }
@@ -98,15 +87,53 @@ QJsonObject Radiooooo::getSongInfo() {
     QJsonDocument jsonDoc = cfg->configToJson(config);
 
     QNetworkReply *reply = netManager->post(request, jsonDoc.toJson());
+    connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
     loop.exec();
 
-    qDebug() << reply->readAll();
+    QString response = reply->readAll();
+    QJsonObject info;
+    if(reply->error() == QNetworkReply::NoError) {
+        info = QJsonDocument().fromJson(response.toUtf8()).object();
+    } else {
+        info.insert("error", response);
+    }
+
+    reply->deleteLater();
+    return info;
 }
 
-QString Radiooooo::downloadFile(QString url) {
-    // make get request to <url>
-    // save file
-    // return file path
+bool Radiooooo::saveFile(QString path, QByteArray data) {
+    QFile binFile(path);
+
+    if (!binFile.open(QIODevice::WriteOnly)) {
+        return false;
+    }
+
+    binFile.write(data);
+    binFile.close();
+    return true;
+}
+
+bool Radiooooo::downloadFile(QString filename, QString url) {
+    QJsonObject jsonObj;
+    QNetworkRequest request;
+    QEventLoop loop;
+
+    request.setUrl(QUrl(url));
+
+    QNetworkReply *reply = netManager->get(request);
+    connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
+    loop.exec();
+
+    if(reply->error() != QNetworkReply::NoError) {
+        return false;
+    }
+
+    QByteArray data = reply->readAll();
+    bool success = saveFile(cfg->audioDirPath + "/" + filename, data);
+
+    reply->deleteLater();
+    return success;
 }
 
 void Radiooooo::playLoop() {
@@ -114,14 +141,47 @@ void Radiooooo::playLoop() {
     // wait while playing
     // ...
     // restart loop
-    while(true) {
+    QJsonObject songInfo = getSongInfo();
+    if(songInfo.keys().contains("error")) {
+        qDebug() << "error: " << songInfo["error"];
+        return;
+    }
 
-        break;
+    QString title = songInfo["title"].toString();
+    QString artist = songInfo["artist"].toString();
+    QString year = songInfo["year"].toString();
+
+    QString invalidChars = QRegExp::escape("\\/:*?\"\'<>| ");
+
+    QString filename = title;
+    filename.replace(QRegExp("[" + invalidChars + "]"), "_");
+    filename += ".ogg";
+
+    QString oggUrl = songInfo["links"].toObject()["ogg"].toString();
+    qDebug() << title;
+    qDebug() << artist;
+    qDebug() << year;
+    qDebug() << oggUrl;
+
+    downloadFile(filename, oggUrl);
+
+    if(oggUrl == "" ) {
+        return;
+    }
+
+    state = PLAYING;
+    try {
+        while(true) {
+
+            break;
+        }
+    } catch (const QString err) {
+        // set error flag
     }
 }
 
 void Radiooooo::playPause(bool play) {
-    getSongInfo();
+    playLoop();
     if(play) {
         if(state == IDLE) {
             // download

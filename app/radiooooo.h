@@ -15,6 +15,8 @@
 #include <QVariant>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <QByteArray>
+#include <QRegExp>
 #include "configurator.h"
 
 class Radiooooo : public QObject
@@ -33,17 +35,18 @@ private:
     Configurator *cfg;
     QMediaPlayer *mediaPlayer;
     QNetworkAccessManager *netManager;
-    void firstLaunch();
+    void firstLaunch(); // init default stuff on first launch
 
-    QJsonObject getSongInfo();
-    QJsonObject getCountries(QString decade); // get available isocodes
-    QString downloadFile(QString url); // returns file path
+    QJsonObject getSongInfo(); // returns json data from Radiooooo (song name, url, etc)
+    QJsonObject getCountries(QString decade); // gets available isocodes
+    bool downloadFile(QString path, QString url); // downloads audio file from url, returns true if success
+    bool saveFile(QString path, QByteArray data); // saves audio file, returns true if success
 
 signals:
 
 
 public slots:
-    QString loadConfig();
+    QString loadConfig(); // loading config from json file
     void updateConfig(QString param, QString value, bool enable);
 
     void playPause(bool play);

@@ -23,8 +23,7 @@ QJsonDocument Configurator::configToJson(Configurator::ConfigStorage c) {
 
 void Configurator::initDirs() {
     QDir().mkdir(appDirPath);
-    QDir().mkdir(oggDirPath);
-    QDir().mkdir(mpegDirPath);
+    QDir().mkdir(audioDirPath);
 }
 
 void Configurator::initConfig() {

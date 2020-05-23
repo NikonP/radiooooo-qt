@@ -11,6 +11,7 @@
 #include <QJsonArray>
 #include <QMap>
 #include <QList>
+#include <defaults.h>
 
 class Configurator : public QObject
 {
@@ -26,7 +27,8 @@ public:
     void loadConfig();
     void updateConfig(QString param, QString value, bool enable);
 
-    const QList<QString> moods = {"Fast", "Slow", "Weird"};
+    const QList<QString> moods = defMoods;
+    const QList<QString> allCountries = defCountries;
     const int minDecade = 1910;
     const int maxDecade = 2020;
 
@@ -38,8 +40,7 @@ public:
     QString appDir = ".radiooooo-qt";
     QString appDirPath = QDir::homePath() + "/" + appDir;
     QString configFilePath = appDirPath + "/config.json";
-    QString oggDirPath = appDirPath + "/" + "ogg-files";
-    QString mpegDirPath = appDirPath + "/" + "mpeg-files";
+    QString audioDirPath = appDirPath + "/" + "audio-files";
 
 private:
     ConfigStorage config;
