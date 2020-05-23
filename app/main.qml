@@ -27,6 +27,10 @@ ApplicationWindow {
         onUpdateProgressBar: {
             audioPlayer.setPlaybackProgress(progress)
         }
+
+        onUpdateStatusMsg: {
+            audioPlayer.setStatus(message)
+        }
     }
 
     Frame {

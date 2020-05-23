@@ -123,6 +123,8 @@ bool Radiooooo::saveFile(QString path, QByteArray data) {
 }
 
 QString Radiooooo::downloadFile(QString filename, QString url) {
+    updateStatusMsg("Downloading new song...");
+
     QJsonObject jsonObj;
     QNetworkRequest request;
     QEventLoop loop;
@@ -150,8 +152,8 @@ QString Radiooooo::downloadFile(QString filename, QString url) {
 }
 
 void Radiooooo::playNext() {
-    mediaPlayer->stop();
     state = IDLE;
+    mediaPlayer->stop();
 
     QJsonObject songInfo = getSongInfo();
     if(songInfo.keys().contains("error")) {
@@ -162,6 +164,8 @@ void Radiooooo::playNext() {
     QString title = songInfo["title"].toString();
     QString artist = songInfo["artist"].toString();
     QString year = songInfo["year"].toString();
+
+    nowPlaying = title + " by " + artist;
 
     QString invalidChars = QRegExp::escape("\\/:*?\"\'<>| ");
 
@@ -183,6 +187,7 @@ void Radiooooo::playNext() {
     mediaPlayer->setMedia(QUrl::fromLocalFile(filePath));
     mediaPlayer->setVolume(50);
     mediaPlayer->play();
+    updateStatusMsg(nowPlaying);
 }
 
 void Radiooooo::stateChanged(QMediaPlayer::State playerState) {
@@ -213,11 +218,13 @@ void Radiooooo::playPause(bool play) {
         } else if(state == PAUSED) {
             state = PLAYING;
             mediaPlayer->play();
+            updateStatusMsg(nowPlaying);
         }
     } else {
         if(state == PLAYING) {
             state = PAUSED;
             mediaPlayer->pause();
+            updateStatusMsg("Paused");
         }
     }
 }

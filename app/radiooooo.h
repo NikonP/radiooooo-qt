@@ -32,6 +32,7 @@ private:
     const QString baseAPI = "https://radiooooo.app";
     const QString getCodesUrl = baseAPI + "/country/mood?decade=";
     const QString getSongUrl = baseAPI + "/play";
+    QString nowPlaying;
 
     qint64 audioDuration = 0;
 
@@ -47,6 +48,7 @@ private:
 
 signals:
     void updateProgressBar(double progress);
+    void updateStatusMsg(QString message);
 
 public slots:
     QString loadConfig(); // loading config from json file
