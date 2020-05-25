@@ -1,6 +1,4 @@
 #include "radiooooo.h"
-#include <QtDebug>
-#include <QVariantMap>
 
 Radiooooo::Radiooooo(QObject *parent) : QObject(parent)
 {

@@ -1,5 +1,4 @@
 #include "configurator.h"
-#include <QtDebug>
 
 Configurator::Configurator(QObject *parent) : QObject(parent)
 {

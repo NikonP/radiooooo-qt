@@ -4,13 +4,9 @@
 #include <QObject>
 #include <QDir>
 #include <QFile>
-#include <QHash>
-#include <QVector>
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QJsonArray>
-#include <QMap>
-#include <QList>
 #include <defaults.h>
 
 class Configurator : public QObject

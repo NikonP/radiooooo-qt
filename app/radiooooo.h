@@ -2,22 +2,11 @@
 #define RADIOOOOO_H
 
 #include <QObject>
-#include <QDir>
-#include <QFile>
 #include <QMediaPlayer>
 #include <QNetworkAccessManager>
-#include <QIODevice>
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QEventLoop>
-#include <QUrlQuery>
-#include <QSet>
-#include <QVariant>
-#include <QJsonObject>
-#include <QJsonDocument>
-#include <QByteArray>
-#include <QRegExp>
-#include <QMediaContent>
 #include "configurator.h"
 
 class Radiooooo : public QObject
