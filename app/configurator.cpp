@@ -1,3 +1,8 @@
+/*
+ * This file is part of radiooooo-qt
+ * configurator.cpp - some functions for storing app configuration in json file
+ */
+
 #include "configurator.h"
 
 Configurator::Configurator(QObject *parent) : QObject(parent)

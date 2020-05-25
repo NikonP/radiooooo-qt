@@ -1,4 +1,7 @@
-// default values for config
+/*
+ * This file is part of radiooooo-qt
+ * default values for config
+ */
 
 #ifndef DEFAULTS_H
 #define DEFAULTS_H

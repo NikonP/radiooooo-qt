@@ -1,3 +1,9 @@
+/*
+ * This file is part of radiooooo-qt
+ * radiooooo.cpp - implements interaction with https://radiooooo.app/
+ * and audio player logic.
+ */
+
 #include "radiooooo.h"
 
 Radiooooo::Radiooooo(QObject *parent) : QObject(parent)

@@ -1,3 +1,8 @@
+/*
+ * This file is part of radiooooo-qt
+ * configurator.h - header file for configurator.cpp
+ */
+
 #ifndef CONFIGURATOR_H
 #define CONFIGURATOR_H
 
@@ -7,6 +12,7 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QJsonArray>
+#include <QList>
 #include <defaults.h>
 
 class Configurator : public QObject
@@ -15,31 +21,35 @@ class Configurator : public QObject
 public:
     explicit Configurator(QObject *parent = nullptr);
 
-    typedef QMap<QString, QList<QString>> ConfigStorage;
+    typedef QMap<QString, QList<QString>> ConfigStorage; // data type for config storage
 
-    void initDirs();
-    void initConfig();
-    void saveConfig();
-    void loadConfig();
-    void updateConfig(QString param, QString value, bool enable);
+    void initDirs(); // creates app's dirs
+    void initConfig(); // init config with default values
+    void saveConfig(); // saves config to json file
+    void loadConfig(); // loads config from json file
 
-    const QList<QString> moods = defMoods;
-    const QList<QString> allCountries = defCountries;
+    // updates param in config, adds value if enable==true, removes otherwise
+    void updateConfig(QString param,
+                      QString value,
+                      bool enable);
+
+    const QList<QString> moods = defMoods; // all available moods
+    const QList<QString> allCountries = defCountries; // all available countries
     const int minDecade = 1910;
     const int maxDecade = 2020;
 
-    ConfigStorage getConfig();
-    QString getConfigStr();
-    QJsonObject getConfigJson();
-    QJsonDocument configToJson(ConfigStorage c);
+    ConfigStorage getConfig(); // config getter
+    QString getConfigStr(); // config getter but it returns string
+    QJsonObject getConfigJson(); // config getter but it returns json
+    QJsonDocument configToJson(ConfigStorage c); // converts config to json
 
-    QString appDir = ".radiooooo-qt";
-    QString appDirPath = QDir::homePath() + "/" + appDir;
-    QString configFilePath = appDirPath + "/config.json";
-    QString audioDirPath = appDirPath + "/" + "audio-files";
+    QString appDir = ".radiooooo-qt"; // name of the app's dir
+    QString appDirPath = QDir::homePath() + "/" + appDir; // app's dir path
+    QString configFilePath = appDirPath + "/config.json"; // app's config file path
+    QString audioDirPath = appDirPath + "/" + "audio-files"; // dir for storing audio files
 
 private:
-    ConfigStorage config;
+    ConfigStorage config; // main config var
 
 signals:
 
