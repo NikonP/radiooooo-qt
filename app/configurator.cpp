@@ -1,5 +1,6 @@
 /*
  * This file is part of radiooooo-qt
+ * GitHub: https://github.com/NikonP/radiooooo-qt
  * configurator.cpp - some functions for storing app configuration in json file
  */
 

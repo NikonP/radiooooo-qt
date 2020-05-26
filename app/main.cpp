@@ -1,5 +1,6 @@
 /*
  * radiooooo-qt - unofficial client for https://radiooooo.app/
+ * GitHub: https://github.com/NikonP/radiooooo-qt
  * Plays random songs from specific time and space
  * Time is licensed under the GPL (Gallifrey Public License)
  *

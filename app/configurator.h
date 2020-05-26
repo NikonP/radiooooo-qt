@@ -1,5 +1,6 @@
 /*
  * This file is part of radiooooo-qt
+ * GitHub: https://github.com/NikonP/radiooooo-qt
  * configurator.h - header file for configurator.cpp
  */
 

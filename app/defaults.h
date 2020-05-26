@@ -1,5 +1,6 @@
 /*
  * This file is part of radiooooo-qt
+ * GitHub: https://github.com/NikonP/radiooooo-qt
  * default values for config
  */
 
