@@ -36,7 +36,6 @@ private:
     Configurator *cfg; // configuration stuff
     QMediaPlayer *mediaPlayer; // actually media player :/
     QNetworkAccessManager *netManager; // network stuff
-    void firstLaunch(); // init default stuff on first launch
 
     QJsonObject getSongInfo(); // returns json data from Radiooooo (song name, url, etc)
     QJsonObject getCountries(QString decade); // gets available isocodes

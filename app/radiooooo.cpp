@@ -15,14 +15,13 @@ Radiooooo::Radiooooo(QObject *parent) : QObject(parent)
     connect(mediaPlayer, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(stateChanged(QMediaPlayer::State)));
 
     netManager = new QNetworkAccessManager(this);
-}
 
-/*
- * Inits default stuff
- */
-void Radiooooo::firstLaunch() {
-    cfg->initDirs();
-    cfg->initConfig();
+    if(!QDir(cfg->appDirPath).exists() || !QDir(cfg->audioDirPath).exists()) {
+        cfg->initDirs();
+    }
+    if(!QFileInfo::exists(cfg->configFilePath)) {
+        cfg->initConfig();
+    }
 }
 
 /*
@@ -31,8 +30,8 @@ void Radiooooo::firstLaunch() {
  * @return QString - QString var as string (for qml)
  */
 QString Radiooooo::loadConfig() {
-    if(!QDir(cfg->appDirPath).exists() || !QDir(cfg->audioDirPath).exists()) {
-        firstLaunch();
+    if(!QFileInfo::exists(cfg->configFilePath)) {
+        cfg->initConfig();
     } else {
         cfg->loadConfig();
     }
@@ -110,6 +109,7 @@ QJsonObject Radiooooo::getSongInfo() {
     if(config["isocodes"].length() == 0 || config["isocodes"].contains("any")) {
         config["isocodes"] = cfg->allCountries;
     }
+    qDebug() << config;
 
     // api requires uppercase
     for(QString& m : config["moods"]) {

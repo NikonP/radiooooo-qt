@@ -41,6 +41,9 @@ void Configurator::initDirs() {
  * Inits config with default values
  */
 void Configurator::initConfig() {
+    // remove all
+    config.clear();
+
     // init config with dafault values
     config["decades"].push_back("1980"); // select 1980 by default
     config["isocodes"].push_back("GBR"); // select United Kingdom by default
