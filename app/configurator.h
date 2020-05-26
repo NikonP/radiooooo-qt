@@ -40,7 +40,6 @@ public:
 
     ConfigStorage getConfig(); // config getter
     QString getConfigStr(); // config getter but it returns string
-    QJsonObject getConfigJson(); // config getter but it returns json
     QJsonDocument configToJson(ConfigStorage c); // converts config to json
 
     QString appDir = ".radiooooo-qt"; // name of the app's dir
