@@ -43,7 +43,7 @@ private:
     QString downloadFile(QString path, QString url); // downloads audio file from url, returns filepath if success
     bool saveFile(QString path, QByteArray data); // saves audio file, returns true if success
 
-    void playNext(); // downloading new file and makes QMediaPlayer to play it
+    void playNext(); // Downloads new file and makes QMediaPlayer to play it
 
 signals:
     void updateProgressBar(double progress); // 0 - 0%, 1 - 100%

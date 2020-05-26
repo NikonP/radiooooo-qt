@@ -17,11 +17,19 @@ Radiooooo::Radiooooo(QObject *parent) : QObject(parent)
     netManager = new QNetworkAccessManager(this);
 }
 
+/*
+ * Inits default stuff
+ */
 void Radiooooo::firstLaunch() {
     cfg->initDirs();
     cfg->initConfig();
 }
 
+/*
+ * Makes Configurator to load config from json file
+ * Uses default config if file does not exist
+ * @return QString - QString var as string (for qml)
+ */
 QString Radiooooo::loadConfig() {
     if(!QDir(cfg->appDirPath).exists() || !QDir(cfg->audioDirPath).exists()) {
         firstLaunch();
@@ -33,40 +41,56 @@ QString Radiooooo::loadConfig() {
     return jsonString;
 }
 
+/*
+ * Calls Configurator updateConfig function
+ */
 void Radiooooo::updateConfig(QString param, QString value, bool enable) {
     cfg->updateConfig(param, value, enable);
 }
 
+/*
+ * Makes GET request to isocodes endpoint
+ * @param QString decade - decades 1910-2020 with step 10
+ * @return QJsonObject - api response or {"error": {err_msg}} on error
+ */
 QJsonObject Radiooooo::getCountries(QString decade) {
     QJsonObject jsonObj;
     QNetworkRequest request;
-    QEventLoop loop;
+    QEventLoop loop; // loop for synchronous request
 
-    request.setUrl(QUrl(getCodesUrl + decade));
-    request.setRawHeader("content-type", "application/json");
+    request.setUrl(QUrl(getCodesUrl + decade)); // api endpoint
+    request.setRawHeader("content-type", "application/json"); // use json
 
     QNetworkReply *reply = netManager->get(request);
     connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
     loop.exec();
 
+    QString jsonStr = reply->readAll(); // read response
+
+    // return {"error": {err_msg}} on request error
     if(reply->error() != QNetworkReply::NoError) {
-        jsonObj.insert("error", reply->error());
+        jsonObj.insert("error", jsonStr);
         return jsonObj;
     }
 
-    QString jsonStr = reply->readAll();
-    jsonObj = QJsonDocument().fromJson(jsonStr.toUtf8()).object();
+    jsonObj = QJsonDocument().fromJson(jsonStr.toUtf8()).object(); // convert to json
 
     reply->deleteLater();
     return jsonObj;
 }
 
+/*
+ * Makes POST request to get-song endpoint
+ * POST structure - same as config
+ * fun radiooooo.app bug: if use all isocodes always returns "New York Business"
+ * @return QJsonObject - api response or {"error": {err_msg}} on error
+ */
 QJsonObject Radiooooo::getSongInfo() {
     QNetworkRequest request;
-    QEventLoop loop;
+    QEventLoop loop; // loop for synchronous request
 
-    request.setUrl(QUrl(getSongUrl));
-    request.setRawHeader("content-type", "application/json");
+    request.setUrl(QUrl(getSongUrl)); // api endpoint
+    request.setRawHeader("content-type", "application/json"); // use json
 
     Configurator::ConfigStorage config = cfg->getConfig();
 
@@ -98,18 +122,26 @@ QJsonObject Radiooooo::getSongInfo() {
     connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
     loop.exec();
 
-    QString response = reply->readAll();
+    QString response = reply->readAll(); // read response
     QJsonObject info;
-    if(reply->error() == QNetworkReply::NoError) {
-        info = QJsonDocument().fromJson(response.toUtf8()).object();
-    } else {
+
+    // return {"error": {err_msg}} on request error
+    if(reply->error() != QNetworkReply::NoError) {
         info.insert("error", response);
     }
+
+    info = QJsonDocument().fromJson(response.toUtf8()).object(); // convert to json
 
     reply->deleteLater();
     return info;
 }
 
+/*
+ * Saves binary file (song)
+ * @param QString path - where to save
+ * @param QByteArray data - some bin data
+ * @return bool - true on success, false otherwise
+ */
 bool Radiooooo::saveFile(QString path, QByteArray data) {
     if(QFileInfo(path).exists()) {
         return true;
@@ -126,6 +158,12 @@ bool Radiooooo::saveFile(QString path, QByteArray data) {
     return true;
 }
 
+/*
+ * Downloads song from given url to audio-dir
+ * @param QString filename - name of new file
+ * @param QString url
+ * @return QString - full path to new file or "error" string
+ */
 QString Radiooooo::downloadFile(QString filename, QString url) {
     updateStatusMsg("Downloading new song...");
 
@@ -155,55 +193,78 @@ QString Radiooooo::downloadFile(QString filename, QString url) {
     return filePath;
 }
 
+/*
+ * Downloads new file and makes QMediaPlayer to play it
+ */
 void Radiooooo::playNext() {
-    state = IDLE;
+    state = IDLE; // update state
     mediaPlayer->stop();
 
-    QJsonObject songInfo = getSongInfo();
+    QJsonObject songInfo = getSongInfo(); // get new song
     if(songInfo.keys().contains("error")) {
         qDebug() << "error: " << songInfo["error"];
         return;
     }
 
+    // parse response data
     QString title = songInfo["title"].toString();
     QString artist = songInfo["artist"].toString();
     QString year = songInfo["year"].toString();
 
     nowPlaying = QString("\"%1\" by \"%2\". %3").arg(title).arg(artist).arg(year);
 
+    // make valid filename
     QString invalidChars = QRegExp::escape("\\/:*?\"\'<>| ");
-
     QString filename = title;
     filename.replace(QRegExp("[" + invalidChars + "]"), "_");
     filename += ".ogg";
 
+    // get direct link to audio file
     QString oggUrl = songInfo["links"].toObject()["ogg"].toString();
     if(oggUrl == "") {
         return;
     }
 
+    // donwload file
     QString filePath = downloadFile(filename, oggUrl);
     if(filePath == "error") {
         return;
     }
 
-    state = PLAYING;
+    state = PLAYING; // update state
+
+    // make QMediaPlayer play new song
     mediaPlayer->setMedia(QUrl::fromLocalFile(filePath));
-    mediaPlayer->setVolume(50);
     mediaPlayer->play();
+
     updateStatusMsg(nowPlaying);
 }
 
+/*
+ * Starts next song when prev ends
+ * @param State playerState - QMediaPlayer state
+ * slot for QMediaPlayer signal
+ */
 void Radiooooo::stateChanged(QMediaPlayer::State playerState) {
     if(playerState == QMediaPlayer::StoppedState && state != IDLE) {
         playNext();
     }
 }
 
+/*
+ * Updates audioDuration
+ * @param qint64 newDuration - new song duration
+ * slot for QMediaPlayer signal
+ */
 void Radiooooo::durationChanged(qint64 newDuration) {
     audioDuration = newDuration;
 }
 
+/*
+ * Calcs progress status and calls updateProgressBar
+ * @param qint64 pos - current QMediaPlayer position
+ * slot for QMediaPlayer signal
+ */
 void Radiooooo::updateProgress(qint64 pos) {
     double progress;
     if(audioDuration == 0) {
@@ -215,10 +276,18 @@ void Radiooooo::updateProgress(qint64 pos) {
     updateProgressBar(progress);
 }
 
+/*
+ * Sets QMediaPlayer volume
+ * @param int volume - new QMediaPlayer volume
+ */
 void Radiooooo::setVolume(int volume) {
     mediaPlayer->setVolume(volume);
 }
 
+/*
+ * Makes audio player to pause or play
+ * @param bool play - pause (false) or play (true)
+ */
 void Radiooooo::playPause(bool play) {
     if(play) {
         if(state == IDLE) {
@@ -237,6 +306,9 @@ void Radiooooo::playPause(bool play) {
     }
 }
 
+/*
+ * Makes audio player to skip song
+ */
 void Radiooooo::nextSong() {
     if(state == PLAYING) {
         playNext();
