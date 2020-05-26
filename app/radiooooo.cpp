@@ -109,7 +109,6 @@ QJsonObject Radiooooo::getSongInfo() {
     if(config["isocodes"].length() == 0 || config["isocodes"].contains("any")) {
         config["isocodes"] = cfg->allCountries;
     }
-    qDebug() << config;
 
     // api requires uppercase
     for(QString& m : config["moods"]) {
@@ -203,6 +202,8 @@ void Radiooooo::playNext() {
     QJsonObject songInfo = getSongInfo(); // get new song
     if(songInfo.keys().contains("error")) {
         qDebug() << "error: " << songInfo["error"];
+        updateStatusMsg("Error! Invalid API request");
+        forcePause();
         return;
     }
 
@@ -222,12 +223,16 @@ void Radiooooo::playNext() {
     // get direct link to audio file
     QString oggUrl = songInfo["links"].toObject()["ogg"].toString();
     if(oggUrl == "") {
+        updateStatusMsg("Error! Radiooooo empty response");
+        forcePause();
         return;
     }
 
     // donwload file
     QString filePath = downloadFile(filename, oggUrl);
     if(filePath == "error") {
+        updateStatusMsg("Error! Downloading error");
+        forcePause();
         return;
     }
 

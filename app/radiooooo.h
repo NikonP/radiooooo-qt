@@ -47,6 +47,7 @@ private:
 signals:
     void updateProgressBar(double progress); // 0 - 0%, 1 - 100%
     void updateStatusMsg(QString message); // set status message
+    void forcePause(); // updates play/pause button
 
 public slots:
     QString loadConfig(); // loading config from json file

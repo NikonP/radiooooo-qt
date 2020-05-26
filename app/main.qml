@@ -36,6 +36,10 @@ ApplicationWindow {
         onUpdateStatusMsg: {
             audioPlayer.setStatus(message)
         }
+
+        onForcePause: {
+            audioPlayer.playing = false
+        }
     }
 
     Frame {
