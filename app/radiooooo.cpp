@@ -23,7 +23,7 @@ void Radiooooo::firstLaunch() {
 }
 
 QString Radiooooo::loadConfig() {
-    if(!QDir(cfg->appDirPath).exists()) {
+    if(!QDir(cfg->appDirPath).exists() || !QDir(cfg->audioDirPath).exists()) {
         firstLaunch();
     } else {
         cfg->loadConfig();
