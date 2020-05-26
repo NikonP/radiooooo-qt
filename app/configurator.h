@@ -39,6 +39,8 @@ public:
     const int minDecade = 1910;
     const int maxDecade = 2020;
 
+    const QMap<QString, QString> quickCountries = quickSetupCountries;
+
     ConfigStorage getConfig(); // config getter
     QString getConfigStr(); // config getter but it returns string
     QJsonDocument configToJson(ConfigStorage c); // converts config to json
@@ -47,6 +49,8 @@ public:
     QString appDirPath = QDir::homePath() + "/" + appDir; // app's dir path
     QString configFilePath = appDirPath + "/config.json"; // app's config file path
     QString audioDirPath = appDirPath + "/" + "audio-files"; // dir for storing audio files
+
+    QString getQuickCountries(); // returns countries for quick setup (for qml)
 
 private:
     ConfigStorage config; // main config var

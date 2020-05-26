@@ -14,4 +14,16 @@ const QList<QString> defCountries = {"ABW", "AFG", "AGO", "AIA", "ALA", "ALB", "
 // available moods
 const QList<QString> defMoods = {"Fast", "Slow", "Weird"};
 
+/*
+ * some countries for quick setup
+ * <ISO-3166-1 Alpha-3>: <name of the country>
+ */
+const QMap<QString, QString> quickSetupCountries {
+    {"GBR", "United Kingdom"}, // The Beatles, David Bowie and Queen <3
+    {"USA", "USA"},            // Bon Jovi
+    {"RUS", "Russia"},         // Nautilus Pompilius
+    {"AUS", "Australia"},      // AC/DC
+    {"any", "Any country"}     // Just anything
+};
+
 #endif // DEFAULTS_H

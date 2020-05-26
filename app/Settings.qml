@@ -23,14 +23,10 @@ Frame {
 
     // some countries for quick setup
     // <ISO-3166-1 Alpha-3>: <name of the country>
-    property var quickCountries: {
-        "GBR": "United Kingdom", // The Beatles, David Bowie and Queen <3
-        "USA": "USA",            // Bon Jovi
-        "RUS": "Russia",         // Nautilus Pompilius
-        "AUS": "Australia",      // AC/DC
-        "any": "Any country"
-    }
-    property var moodsArr: ["Slow", "Fast", "Weird"]
+    property var quickCountries: JSON.parse(radio.getQuickCountries())
+    property var moodsArr: radio.getMoods()
+    property var minDecade: radio.getMinDecade()
+    property var maxDeacde: radio.getMaxDeacde()
 
     property var config
 
@@ -47,8 +43,7 @@ Frame {
         ListModel {
             id: decadesModel
             Component.onCompleted: {
-                for(var i = 1910; i <= 2020; i+=10){
-
+                for(var i = minDecade; i <= maxDeacde; i+=10){
                     var isSelected = false;
                     if("decades" in config) {
                         isSelected = config["decades"].includes(i.toString());

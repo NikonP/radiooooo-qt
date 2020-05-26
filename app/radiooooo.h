@@ -66,6 +66,11 @@ public slots:
     void durationChanged(qint64 newDuration); // updates audioDuration
     void updateProgress(qint64 pos); // calcs progress status and calls updateProgressBar
 
+    QString getQuickCountries(); // returns countries for quick setup (for qml)
+    QList<QString> getMoods(); // returns moods list (for qml)
+    int getMinDecade();
+    int getMaxDeacde();
+
 };
 
 #endif // RADIOOOOO_H

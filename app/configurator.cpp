@@ -128,3 +128,18 @@ QString Configurator::getConfigStr() {
     QString jsonString = jsonDoc.toJson();
     return jsonString;
 }
+
+/*
+ * Returns countries for quick setup
+ * (for qml)
+ * @return json as QString - <ISO-3166-1 Alpha-3>: <name of the country>
+ */
+QString Configurator::getQuickCountries() {
+    QJsonObject jsonObj;
+    for(QString key : quickCountries.keys()) {
+        jsonObj.insert(key, quickCountries[key]);
+    }
+    QJsonDocument jsonDoc(jsonObj);
+    QString jsonString = jsonDoc.toJson();
+    return jsonString;
+}

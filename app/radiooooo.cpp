@@ -42,6 +42,31 @@ QString Radiooooo::loadConfig() {
 }
 
 /*
+ * Returns countries for quick setup
+ * (for qml)
+ * @return json as QString - <ISO-3166-1 Alpha-3>: <name of the country>
+ */
+QString Radiooooo::getQuickCountries() {
+    return cfg->getQuickCountries();
+}
+
+/*
+ * Returns moods list (for qml)
+ * @return QList<QString> - list of moods
+ */
+QList<QString> Radiooooo::getMoods() {
+    return cfg->moods;
+}
+
+int Radiooooo::getMinDecade() {
+    return cfg->minDecade;
+}
+
+int Radiooooo::getMaxDeacde() {
+    return cfg->maxDecade;
+}
+
+/*
  * Calls Configurator updateConfig function
  */
 void Radiooooo::updateConfig(QString param, QString value, bool enable) {
