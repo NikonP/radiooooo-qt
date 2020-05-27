@@ -9,8 +9,11 @@ before_install:
  - sudo apt-get install qt5-default qttools5-dev-tools
 
 script:
-  - qmake
+  - mkdir build
+  - cd build
+  - qmake ..
   - make
+  - ls
   - ./tests/tests
 
 notifications:
