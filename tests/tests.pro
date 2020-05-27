@@ -6,6 +6,11 @@ CONFIG -= app_bundle
 CONFIG += thread
 CONFIG -= qt
 
+# gcov
+QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
+QMAKE_CFLAGS += -fprofile-arcs -ftest-coverage
+LIBS += -lgcov
+
 TARGET = run-tests
 
 HEADERS += \
