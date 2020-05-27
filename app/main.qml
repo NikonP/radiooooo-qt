@@ -1,6 +1,6 @@
 /*
  * This file is part of radiooooo-qt
- *
+ * GitHub: https://github.com/NikonP/radiooooo-qt
  */
 
 import QtQuick 2.12
