@@ -1,0 +1,11 @@
+dist: trusty
+
+language:
+  - cpp
+
+script:
+  - qmake
+  - make
+
+notifications:
+  email: false
