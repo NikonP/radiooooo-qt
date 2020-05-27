@@ -6,6 +6,8 @@ CONFIG -= app_bundle
 CONFIG += thread
 CONFIG -= qt
 
+TARGET = run-tests
+
 HEADERS += \
         tst_case1.h
 

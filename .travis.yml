@@ -13,7 +13,7 @@ script:
   - make
   - ls
   - ls ./tests
-  - ./tests/tests
+  - ./tests/run-tests
 
 notifications:
   email: false
