@@ -15,7 +15,7 @@ script:
   - ls
   - ls ./app
   - ls ./tests
-  - ./tests/run-tests
+  - ./tests/tests
 
 notifications:
   email: false

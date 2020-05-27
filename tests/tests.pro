@@ -11,7 +11,7 @@ QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
 QMAKE_CFLAGS += -fprofile-arcs -ftest-coverage
 LIBS += -lgcov
 
-TARGET = run-tests
+# TARGET = run-tests
 
 HEADERS += \
         tst_case1.h
