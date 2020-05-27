@@ -19,11 +19,17 @@ const QList<QString> defMoods = {"Fast", "Slow", "Weird"};
  * <ISO-3166-1 Alpha-3>: <name of the country>
  */
 const QMap<QString, QString> quickSetupCountries {
-    {"GBR", "United Kingdom"}, // The Beatles, David Bowie and Queen <3
-    {"USA", "USA"},            // Bon Jovi
-    {"RUS", "Russia"},         // Nautilus Pompilius
-    {"AUS", "Australia"},      // AC/DC
-    {"any", "Any country"}     // Just anything
+    {"GBR", "United Kingdom"},
+    {"USA", "USA"},
+    {"RUS", "Russia"},
+    {"AUS", "Australia"},
+    {"any", "Any country"}
+};
+
+const QMap<QString, QString> defConfig = {
+    {"decades", "1980"},
+    {"isocodes", "GBR"},
+    {"moods", "Fast"}
 };
 
 #endif // DEFAULTS_H

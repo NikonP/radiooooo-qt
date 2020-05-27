@@ -319,7 +319,7 @@ void Radiooooo::setVolume(int volume) {
  * Makes audio player to pause or play
  * @param bool play - pause (false) or play (true)
  */
-void Radiooooo::playPause(bool play) {
+void Radiooooo::playTrigger(bool play) {
     if(play) {
         if(state == IDLE) {
             playNext();
@@ -340,7 +340,7 @@ void Radiooooo::playPause(bool play) {
 /*
  * Makes audio player to skip song
  */
-void Radiooooo::nextSong() {
+void Radiooooo::skipTrigger() {
     if(state == PLAYING) {
         playNext();
     }

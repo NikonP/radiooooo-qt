@@ -58,8 +58,8 @@ public slots:
                       QString value,
                       bool enable);
 
-    void playPause(bool play); // makes audio player to pause or play
-    void nextSong(); // makes audio player to skip song
+    void playTrigger(bool play); // makes audio player to pause or play
+    void skipTrigger(); // makes audio player to skip song
     void setVolume(int volume); // sets audio player volume
 
     void stateChanged(QMediaPlayer::State playerState); // starts next song when prev ends

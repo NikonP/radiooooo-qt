@@ -36,6 +36,7 @@ public:
 
     const QList<QString> moods = defMoods; // all available moods
     const QList<QString> allCountries = defCountries; // all available countries
+    const QMap<QString, QString> defaultConfig = defConfig;
     const int minDecade = 1910;
     const int maxDecade = 2020;
 

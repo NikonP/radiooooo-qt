@@ -46,9 +46,9 @@ void Configurator::initConfig() {
     config.clear();
 
     // init config with dafault values
-    config["decades"].push_back("1980"); // select 1980 by default
-    config["isocodes"].push_back("GBR"); // select United Kingdom by default
-    config["moods"].push_back("Fast");   // select fast by default
+    for(QString key : defaultConfig.keys()) {
+        config[key].push_back(defaultConfig[key]);
+    }
 
     // save default config
     saveConfig();

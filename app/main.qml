@@ -61,11 +61,11 @@ ApplicationWindow {
             }
 
             onPauseChanged: {
-                radio.playPause(state)
+                radio.playTrigger(state)
             }
 
             onNextSong: {
-                radio.nextSong()
+                radio.skipTrigger()
             }
 
             onVolumeChanged: {
