@@ -20,7 +20,7 @@ script:
   - ./tests/run-tests
 
 after_success:
-  - coveralls --exclude external --exclude tests --gcov-options '\-lp'
+  - coveralls --root . -E ".*external.*" -E ".*tests.*"
 #  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
 #  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
