@@ -23,6 +23,7 @@ TEST(init_config, check_config) {
     Configurator::ConfigStorage config = cfg.getConfig();
     for(auto key : cfg.defaultConfig.keys()) {
         EXPECT_EQ(1, config.keys().contains(key));
+        EXPECT_EQ(1, config[key].length());
         EXPECT_EQ(1, config[key].contains(cfg.defaultConfig[key]));
     }
 }
