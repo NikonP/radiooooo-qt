@@ -46,17 +46,15 @@ public:
     QString getConfigStr(); // config getter but it returns string
     QJsonDocument configToJson(ConfigStorage c); // converts config to json
 
-    QString appDir = ".radiooooo-qt"; // name of the app's dir
-    QString appDirPath = QDir::homePath() + "/" + appDir; // app's dir path
-    QString configFilePath = appDirPath + "/config.json"; // app's config file path
-    QString audioDirPath = appDirPath + "/" + "audio-files"; // dir for storing audio files
+    const QString appDir = ".radiooooo-qt"; // name of the app's dir
+    const QString appDirPath = QDir::homePath() + "/" + appDir; // app's dir path
+    const QString configFilePath = appDirPath + "/config.json"; // app's config file path
+    const QString audioDirPath = appDirPath + "/" + "audio-files"; // dir for storing audio files
 
     QString getQuickCountries(); // returns countries for quick setup (for qml)
 
 private:
     ConfigStorage config; // main config var
-
-signals:
 
 };
 

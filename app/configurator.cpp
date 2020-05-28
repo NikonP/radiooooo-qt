@@ -81,7 +81,7 @@ void Configurator::loadConfig() {
     }
 
     // json text data to QJsonObject
-    QJsonObject jsonObj = QJsonDocument().fromJson(configFile.readAll()).object();
+    QJsonObject jsonObj = QJsonDocument::fromJson(configFile.readAll()).object();
 
     // QJsonObject to ConfigStorage
     for(QString key : jsonObj.keys()) {

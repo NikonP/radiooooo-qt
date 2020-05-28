@@ -98,7 +98,7 @@ QJsonObject Radiooooo::getCountries(QString decade) {
         return jsonObj;
     }
 
-    jsonObj = QJsonDocument().fromJson(jsonStr.toUtf8()).object(); // convert to json
+    jsonObj = QJsonDocument::fromJson(jsonStr.toUtf8()).object(); // convert to json
 
     reply->deleteLater();
     return jsonObj;
