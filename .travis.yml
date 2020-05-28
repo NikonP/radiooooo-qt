@@ -9,6 +9,11 @@ before_install:
  - sudo apt-get install -y qt5-default qttools5-dev-tools
  - pip install --user cpp-coveralls
 
+addons:
+  sonarcloud:
+    organization: "nikonp"
+    token: $SONAR_TOKEN
+
 script:
   - qmake
   - make
@@ -16,6 +21,9 @@ script:
 
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
+  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
 notifications:
   email: false
+  
