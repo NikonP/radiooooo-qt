@@ -16,7 +16,7 @@ addons:
 
 script:
   - qmake
-  - make && make check
+  - make
   - ./tests/run-tests
 
 after_success:
