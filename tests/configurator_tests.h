@@ -55,4 +55,40 @@ TEST(load_config, check_data) {
     }
 }
 
+TEST(update_config, add_val) {
+    Configurator cfg;
+    cfg.initDirs();
+    cfg.initConfig(); // load default
+
+    cfg.updateConfig("moods", "TEST_VAL_1", true);
+    cfg.updateConfig("isocodes", "TEST_VAL_2", true);
+    cfg.updateConfig("decades", "TEST_VAL_3", true);
+
+    Configurator::ConfigStorage config = cfg.getConfig();
+
+    EXPECT_EQ(1, config["moods"].contains("TEST_VAL_1"));
+    EXPECT_EQ(1, config["isocodes"].contains("TEST_VAL_2"));
+    EXPECT_EQ(1, config["decades"].contains("TEST_VAL_3"));
+}
+
+TEST(update_config, remove_val) {
+    Configurator cfg;
+    cfg.initDirs();
+    cfg.initConfig(); // load default
+
+    cfg.updateConfig("moods", "TEST_VAL_1", true);
+    cfg.updateConfig("isocodes", "TEST_VAL_2", true);
+    cfg.updateConfig("decades", "TEST_VAL_3", true);
+
+    cfg.updateConfig("moods", "TEST_VAL_1", false);
+    cfg.updateConfig("isocodes", "TEST_VAL_2", false);
+    cfg.updateConfig("decades", "TEST_VAL_3", false);
+
+    Configurator::ConfigStorage config = cfg.getConfig();
+
+    EXPECT_EQ(0, config["moods"].contains("TEST_VAL_1"));
+    EXPECT_EQ(0, config["isocodes"].contains("TEST_VAL_2"));
+    EXPECT_EQ(0, config["decades"].contains("TEST_VAL_3"));
+}
+
 #endif // CONFIGURATOR_TESTS_H
