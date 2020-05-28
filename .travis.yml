@@ -18,11 +18,12 @@ script:
   - qmake
   - make
   - ./tests/run-tests
+  - ./configure --enable-gcov && make && make check
 
 after_success:
-  - coveralls --root . -E ".*external.*" -E ".*tests.*"
-  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
-  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
+  - coveralls --exclude external --exclude tests --gcov-options '\-lp'
+#  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+#  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
 notifications:
   email: false
