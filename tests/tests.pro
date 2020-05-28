@@ -16,7 +16,6 @@ INCLUDEPATH += ../app
 
 HEADERS += \
         configurator_tests.h \
-        tst_case1.h \
         ../app/configurator.h
 
 SOURCES += \
