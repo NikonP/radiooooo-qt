@@ -1,4 +1,5 @@
 #include "tst_case1.h"
+#include "configurator_tests.h"
 
 #include <gtest/gtest.h>
 
