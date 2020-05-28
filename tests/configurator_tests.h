@@ -3,13 +3,17 @@
 
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
+#include <QDir>
+#include "configurator.h"
 
 using namespace testing;
 
-TEST(test11, case11)
+TEST(init_dirs, check_dirs)
 {
-    EXPECT_EQ(1, 1);
-    ASSERT_THAT(0, Eq(0));
+    Configurator cfg;
+    cfg.initDirs();
+    EXPECT_EQ(true, QDir(cfg.appDirPath).exists());
+    EXPECT_EQ(true, QDir(cfg.audioDirPath).exists());
 }
 
 #endif // CONFIGURATOR_TESTS_H
