@@ -16,9 +16,8 @@ addons:
 
 script:
   - qmake
-  - make
+  - make && make check
   - ./tests/run-tests
-  - ./configure --enable-gcov && make && make check
 
 after_success:
   - coveralls --exclude external --exclude tests --gcov-options '\-lp'
