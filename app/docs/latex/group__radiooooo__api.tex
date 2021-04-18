@@ -1,0 +1,115 @@
+\hypertarget{group__radiooooo__api}{}\doxysection{API}
+\label{group__radiooooo__api}\index{API@{API}}
+
+
+Функции и переменные для работы с API.  
+
+
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+QJson\+Object \mbox{\hyperlink{group__radiooooo__api_gaf65a93a3dd79fb95d2ae19bc5342f191}{Radiooooo\+::get\+Song\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Получает данные через API \mbox{\hyperlink{classRadiooooo}{Radiooooo}}. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{group__radiooooo__api_ga54f6a306bc843e6b3f7d471a2aecb459}{Radiooooo\+::get\+Countries}} (QString decade)
+\begin{DoxyCompactList}\small\item\em Получает доступные исокоды \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{group__radiooooo__api_ga6e69a2a9cc307d47f4e5b70929e170b0}{Radiooooo\+::download\+File}} (QString path, QString url)
+\begin{DoxyCompactList}\small\item\em Скачивает файл по URL. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__radiooooo__api_ga3f679ac8a513529670baf1a76e37000c}{Radiooooo\+::save\+File}} (QString path, QByte\+Array data)
+\begin{DoxyCompactList}\small\item\em Сохраняет файл \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__radiooooo__api_gad8cd26c50b7b06e363f6f1415dd592b2}\label{group__radiooooo__api_gad8cd26c50b7b06e363f6f1415dd592b2}} 
+const QString \mbox{\hyperlink{group__radiooooo__api_gad8cd26c50b7b06e363f6f1415dd592b2}{Radiooooo\+::base\+API}} = \char`\"{}https\+://radiooooo.\+app\char`\"{}
+\begin{DoxyCompactList}\small\item\em Корневой эндпоинт для API \mbox{\hyperlink{classRadiooooo}{Radiooooo}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__radiooooo__api_ga3b07e1e050610d643d37561418cbf939}\label{group__radiooooo__api_ga3b07e1e050610d643d37561418cbf939}} 
+const QString \mbox{\hyperlink{group__radiooooo__api_ga3b07e1e050610d643d37561418cbf939}{Radiooooo\+::get\+Codes\+Url}} = \mbox{\hyperlink{group__radiooooo__api_gad8cd26c50b7b06e363f6f1415dd592b2}{base\+API}} + \char`\"{}/country/mood?decade=\char`\"{}
+\begin{DoxyCompactList}\small\item\em Эндпоинт для получения исокодов \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__radiooooo__api_gad3d3f433fe14d0f755a907d7af95e42e}\label{group__radiooooo__api_gad3d3f433fe14d0f755a907d7af95e42e}} 
+const QString \mbox{\hyperlink{group__radiooooo__api_gad3d3f433fe14d0f755a907d7af95e42e}{Radiooooo\+::get\+Song\+Url}} = \mbox{\hyperlink{group__radiooooo__api_gad8cd26c50b7b06e363f6f1415dd592b2}{base\+API}} + \char`\"{}/play\char`\"{}
+\begin{DoxyCompactList}\small\item\em Эндпоинт для получения аудиофайла \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__radiooooo__api_ga82425a09abc2f6930d05dbd23cc067ed}\label{group__radiooooo__api_ga82425a09abc2f6930d05dbd23cc067ed}} 
+QNetwork\+Access\+Manager $\ast$ \mbox{\hyperlink{group__radiooooo__api_ga82425a09abc2f6930d05dbd23cc067ed}{Radiooooo\+::net\+Manager}}
+\begin{DoxyCompactList}\small\item\em Указатель на QNetwork\+Access\+Manager (класс Qt для работы с сетью) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Функции и переменные для работы с API. 
+
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{group__radiooooo__api_ga6e69a2a9cc307d47f4e5b70929e170b0}\label{group__radiooooo__api_ga6e69a2a9cc307d47f4e5b70929e170b0}} 
+\index{API@{API}!downloadFile@{downloadFile}}
+\index{downloadFile@{downloadFile}!API@{API}}
+\doxysubsubsection{\texorpdfstring{downloadFile()}{downloadFile()}}
+{\footnotesize\ttfamily QString Radiooooo\+::download\+File (\begin{DoxyParamCaption}\item[{QString}]{path,  }\item[{QString}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Скачивает файл по URL. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & -\/ имя файла для сохранения \\
+\hline
+{\em url} & -\/ url откуда скачать файл \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+QString -\/ полный путь к файлу 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__radiooooo__api_ga54f6a306bc843e6b3f7d471a2aecb459}\label{group__radiooooo__api_ga54f6a306bc843e6b3f7d471a2aecb459}} 
+\index{API@{API}!getCountries@{getCountries}}
+\index{getCountries@{getCountries}!API@{API}}
+\doxysubsubsection{\texorpdfstring{getCountries()}{getCountries()}}
+{\footnotesize\ttfamily QJson\+Object Radiooooo\+::get\+Countries (\begin{DoxyParamCaption}\item[{QString}]{decade }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Получает доступные исокоды 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em Десятилетие} & (например 1970, 1980) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+QJson\+Object со списком кодов
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+Не проверяется кратность 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__radiooooo__api_gaf65a93a3dd79fb95d2ae19bc5342f191}\label{group__radiooooo__api_gaf65a93a3dd79fb95d2ae19bc5342f191}} 
+\index{API@{API}!getSongInfo@{getSongInfo}}
+\index{getSongInfo@{getSongInfo}!API@{API}}
+\doxysubsubsection{\texorpdfstring{getSongInfo()}{getSongInfo()}}
+{\footnotesize\ttfamily QJson\+Object Radiooooo\+::get\+Song\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Получает данные через API \mbox{\hyperlink{classRadiooooo}{Radiooooo}}. 
+
+\begin{DoxyReturn}{Возвращает}
+QJson\+Object со всей информацией о треке 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__radiooooo__api_ga3f679ac8a513529670baf1a76e37000c}\label{group__radiooooo__api_ga3f679ac8a513529670baf1a76e37000c}} 
+\index{API@{API}!saveFile@{saveFile}}
+\index{saveFile@{saveFile}!API@{API}}
+\doxysubsubsection{\texorpdfstring{saveFile()}{saveFile()}}
+{\footnotesize\ttfamily bool Radiooooo\+::save\+File (\begin{DoxyParamCaption}\item[{QString}]{path,  }\item[{QByte\+Array}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Сохраняет файл 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & -\/ путь куда сохранить \\
+\hline
+{\em data} & -\/ QByte\+Array содержимое файла \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если удалось сохранить 
+\end{DoxyReturn}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.14)  18 APR 2021 21:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.14)  18 APR 2021 22:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -954,6 +954,10 @@ LaTeX Font Info:    No file T2Aphv.fd. on input line 24.
 LaTeX Font Warning: Font shape `T2A/phv/m/n' undefined
 (Font)              using `T2A/cmr/m/n' instead on input line 24.
 
+
+LaTeX Warning: Label `group__radiooooo__base_gaef4edad91ab779b2da881ae8e89c10e6
+' multiply defined.
+
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 153.
 LaTeX Font Info:    ... okay on input line 153.
@@ -1128,126 +1132,147 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
-(./hierarchy.tex) [5] [6
+(./modules.tex) [5] [6
 
 ]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
-(./annotated.tex) [7] [8
+(./hierarchy.tex) [7] [8
 
 ]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 5.
+(./annotated.tex) [9] [10
+
+]
+{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 6.
+(./group__configurator__base.tex
+
+LaTeX Font Warning: Font shape `T2A/pcr/m/it' undefined
+(Font)              using `T2A/pcr/m/n' instead on input line 36.
+
+[11]) (./group__configurator__fs.tex) (./group__configurator__settings.tex
+[12]
+Underfull \hbox (badness 10000) detected at line 71
+[][][]
+ []
+
+[13]
+Underfull \hbox (badness 10000) detected at line 84
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 97
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 110
+[][][]
+ []
+
+) (./group__constants.tex [14] [15]) (./group__radiooooo__base.tex [16])
+(./group__radiooooo__api.tex [17]
+Underfull \hbox (badness 10000) detected at line 59
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 77
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 80
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 93
+[][][]
+ []
+
+[18]
+Underfull \hbox (badness 10000) detected at line 113
+[][][]
+ []
+
+) (./group__radiooooo__player.tex) (./group__radiooooo__signals.tex [19])
+(./group__radiooooo__slots.tex [20] [21]
+Underfull \hbox (badness 10000) detected at line 69
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 82
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 95
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 108
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 121
+[][][]
+ []
+
+[22] [23]) [24]
+{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 7.
 (./classConfigurator.tex <./classConfigurator.pdf>
-<classConfigurator.pdf, id=316, 501.875pt x 441.20834pt>
+<classConfigurator.pdf, id=718, 501.875pt x 441.20834pt>
 File: classConfigurator.pdf Graphic file (type pdf)
 <use classConfigurator.pdf>
 Package pdftex.def Info: classConfigurator.pdf  used on input line 15.
 (pdftex.def)             Requested size: 64.7253pt x 56.9055pt.
- [9]
+ [25
 
-LaTeX Font Warning: Font shape `T2A/pcr/m/it' undefined
-(Font)              using `T2A/pcr/m/n' instead on input line 104.
-
-[10]
-Underfull \hbox (badness 10000) detected at line 133
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 146
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 159
-[][][]
- []
-
-[11]
-Underfull \hbox (badness 10000) detected at line 172
-[][][]
- []
-
-) (./classRadiooooo.tex <./classRadiooooo.pdf>
-<classRadiooooo.pdf, id=401, 501.875pt x 501.875pt>
+]) (./classRadiooooo.tex <./classRadiooooo.pdf>
+<classRadiooooo.pdf, id=765, 501.875pt x 501.875pt>
 File: classRadiooooo.pdf Graphic file (type pdf)
 <use classRadiooooo.pdf>
 Package pdftex.def Info: classRadiooooo.pdf  used on input line 15.
 (pdftex.def)             Requested size: 56.89883pt x 56.9055pt.
- [12] [13]
-Underfull \hbox (badness 10000) detected at line 122
+ [26]pdfTeX warning (ext4): destination with the same identifier (name{group__r
+adiooooo__base_gaef4edad91ab779b2da881ae8e89c10e6}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.21 ..._base_gaef4edad91ab779b2da881ae8e89c10e6}}
+                                                   [27] [28]
+Underfull \hbox (badness 10000) detected at line 111
 [][][]
  []
 
-[14]
-Underfull \hbox (badness 10000) detected at line 165
-[][][]
- []
+) [29] [30
 
-[15]
-Underfull \hbox (badness 10000) detected at line 210
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 213
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 226
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 239
-[][][]
- []
-
-[16]
-Underfull \hbox (badness 10000) detected at line 252
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 265
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 278
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 291
-[][][]
- []
-
-[17]
-Underfull \hbox (badness 10000) detected at line 326
-[][][]
- []
-
-[18] [19]) [20] (./refman.ind [21
-
+] (./refman.ind [31
 
 
 ]) (./refman.aux)
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 26053374B39ED7BB54A0C9F75A3C723F;8266.
+(rerunfilecheck)             Checksum: 41D63B10768062D4E032672A7912ED67;13166.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 18114 strings out of 479383
- 265173 string characters out of 5875830
- 613010 words of memory out of 5000000
- 34720 multiletter control sequences out of 15000+600000
- 421462 words of font info for 66 fonts, out of 8000000 for 9000
+ 18277 strings out of 479383
+ 269229 string characters out of 5875830
+ 617717 words of memory out of 5000000
+ 34782 multiletter control sequences out of 15000+600000
+ 423226 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,15n,115p,485b,671s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 107i,15n,115p,6396b,671s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{defaults_8h_source} has been referenced but does 
 not exist, replaced by a fixed one
 
@@ -1260,19 +1285,20 @@ s not exist, replaced by a fixed one
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}{/usr/share/te
 xmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dis
-t/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/
-sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></
-usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf
--dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
-per/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (25 pages, 261505 bytes).
+mi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/
+sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></
+usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf
+-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
+per/sfrm2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pf
+b></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on refman.pdf (35 pages, 304872 bytes).
 PDF statistics:
- 677 PDF objects out of 1000 (max. 8388607)
- 624 compressed objects within 7 object streams
- 161 named destinations out of 1000 (max. 500000)
- 363 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1010 PDF objects out of 1200 (max. 8388607)
+ 943 compressed objects within 10 object streams
+ 227 named destinations out of 1000 (max. 500000)
+ 571 words of extra memory for PDF output out of 10000 (max. 10000000)
 

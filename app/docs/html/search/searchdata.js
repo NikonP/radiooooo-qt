@@ -1,11 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "abcdfgilmnpqrsuДС",
+  0: "abcdfgilmnpqrsuДКМНОСФ",
   1: "cr",
   2: "cdfgilprsu",
   3: "abcdgmnqs",
   4: "c",
-  5: "ДС"
+  5: "aКМНОСФ",
+  6: "ДС"
 };
 
 var indexSectionNames =
@@ -15,7 +16,8 @@ var indexSectionNames =
   2: "functions",
   3: "variables",
   4: "typedefs",
-  5: "pages"
+  5: "groups",
+  6: "pages"
 };
 
 var indexSectionLabels =
@@ -25,6 +27,7 @@ var indexSectionLabels =
   2: "Функции",
   3: "Переменные",
   4: "Определения типов",
-  5: "Страницы"
+  5: "Группы",
+  6: "Страницы"
 };
 

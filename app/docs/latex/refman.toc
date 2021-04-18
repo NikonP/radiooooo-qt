@@ -5,42 +5,68 @@
 \contentsline {section}{\numberline {1.2}Заголовочные файлы\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{1}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Сигналы и слоты}{1}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Список задач}{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Иерархический список классов}{5}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Иерархия классов}{5}{section.3.1}%
-\contentsline {chapter}{\numberline {4}Алфавитный указатель классов}{7}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Классы}{7}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Классы}{9}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Класс Configurator}{9}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Подробное описание}{10}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Конструктор(ы)}{10}{subsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.2.1}Configurator()}{10}{subsubsection.5.1.2.1}%
-\contentsline {subsection}{\numberline {5.1.3}Методы}{11}{subsection.5.1.3}%
-\contentsline {subsubsection}{\numberline {5.1.3.1}configToJson()}{11}{subsubsection.5.1.3.1}%
-\contentsline {subsubsection}{\numberline {5.1.3.2}getConfig()}{11}{subsubsection.5.1.3.2}%
-\contentsline {subsubsection}{\numberline {5.1.3.3}getConfigStr()}{11}{subsubsection.5.1.3.3}%
-\contentsline {subsubsection}{\numberline {5.1.3.4}getQuickCountries()}{12}{subsubsection.5.1.3.4}%
-\contentsline {subsubsection}{\numberline {5.1.3.5}updateConfig()}{12}{subsubsection.5.1.3.5}%
-\contentsline {section}{\numberline {5.2}Класс Radiooooo}{12}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Подробное описание}{14}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Конструктор(ы)}{14}{subsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.2.1}Radiooooo()}{14}{subsubsection.5.2.2.1}%
-\contentsline {subsection}{\numberline {5.2.3}Методы}{15}{subsection.5.2.3}%
-\contentsline {subsubsection}{\numberline {5.2.3.1}downloadFile()}{15}{subsubsection.5.2.3.1}%
-\contentsline {subsubsection}{\numberline {5.2.3.2}durationChanged}{15}{subsubsection.5.2.3.2}%
-\contentsline {subsubsection}{\numberline {5.2.3.3}forcePause}{15}{subsubsection.5.2.3.3}%
-\contentsline {subsubsection}{\numberline {5.2.3.4}getCountries()}{16}{subsubsection.5.2.3.4}%
-\contentsline {subsubsection}{\numberline {5.2.3.5}getMaxDeacde}{16}{subsubsection.5.2.3.5}%
-\contentsline {subsubsection}{\numberline {5.2.3.6}getMinDecade}{16}{subsubsection.5.2.3.6}%
-\contentsline {subsubsection}{\numberline {5.2.3.7}getMoods}{17}{subsubsection.5.2.3.7}%
-\contentsline {subsubsection}{\numberline {5.2.3.8}getQuickCountries}{17}{subsubsection.5.2.3.8}%
-\contentsline {subsubsection}{\numberline {5.2.3.9}getSongInfo()}{17}{subsubsection.5.2.3.9}%
-\contentsline {subsubsection}{\numberline {5.2.3.10}loadConfig}{17}{subsubsection.5.2.3.10}%
-\contentsline {subsubsection}{\numberline {5.2.3.11}playTrigger}{17}{subsubsection.5.2.3.11}%
-\contentsline {subsubsection}{\numberline {5.2.3.12}saveFile()}{18}{subsubsection.5.2.3.12}%
-\contentsline {subsubsection}{\numberline {5.2.3.13}setVolume}{18}{subsubsection.5.2.3.13}%
-\contentsline {subsubsection}{\numberline {5.2.3.14}stateChanged}{18}{subsubsection.5.2.3.14}%
-\contentsline {subsubsection}{\numberline {5.2.3.15}updateConfig}{19}{subsubsection.5.2.3.15}%
-\contentsline {subsubsection}{\numberline {5.2.3.16}updateProgress}{19}{subsubsection.5.2.3.16}%
-\contentsline {subsubsection}{\numberline {5.2.3.17}updateProgressBar}{19}{subsubsection.5.2.3.17}%
-\contentsline {subsubsection}{\numberline {5.2.3.18}updateStatusMsg}{20}{subsubsection.5.2.3.18}%
-\contentsline {chapter}{{\cyrillictext \CYRP \cyrr \cyre \cyrd \cyrm \cyre \cyrt \cyrn \cyrery \cyrishrt \ \cyru \cyrk \cyra \cyrz \cyra \cyrt \cyre \cyrl \cyrsftsn }}{21}{section*.14}%
+\contentsline {chapter}{\numberline {3}Алфавитный указатель групп}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Группы}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Иерархический список классов}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Иерархия классов}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Алфавитный указатель классов}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Классы}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Группы}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Основа Configurator}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Подробное описание}{11}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Функции}{11}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}Configurator()}{11}{subsubsection.6.1.2.1}%
+\contentsline {section}{\numberline {6.2}Файловая система}{12}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Подробное описание}{12}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}Настройки}{12}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Подробное описание}{13}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Функции}{13}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}configToJson()}{13}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}getConfig()}{13}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}getConfigStr()}{14}{subsubsection.6.3.2.3}%
+\contentsline {subsubsection}{\numberline {6.3.2.4}getQuickCountries()}{14}{subsubsection.6.3.2.4}%
+\contentsline {subsubsection}{\numberline {6.3.2.5}updateConfig()}{14}{subsubsection.6.3.2.5}%
+\contentsline {section}{\numberline {6.4}Константы}{15}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Подробное описание}{15}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Переменные}{15}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}defConfig}{15}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}quickSetupCountries}{16}{subsubsection.6.4.2.2}%
+\contentsline {section}{\numberline {6.5}Основа Radiooooo}{16}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Подробное описание}{16}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Функции}{16}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}Radiooooo()}{16}{subsubsection.6.5.2.1}%
+\contentsline {section}{\numberline {6.6}API}{17}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Подробное описание}{17}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Функции}{17}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}downloadFile()}{17}{subsubsection.6.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.6.2.2}getCountries()}{18}{subsubsection.6.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.3}getSongInfo()}{18}{subsubsection.6.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.6.2.4}saveFile()}{18}{subsubsection.6.6.2.4}%
+\contentsline {section}{\numberline {6.7}Медиаплеер}{19}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Подробное описание}{19}{subsection.6.7.1}%
+\contentsline {section}{\numberline {6.8}Сигналы Radiooooo}{19}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Подробное описание}{20}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Сигналы}{20}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}forcePause}{20}{subsubsection.6.8.2.1}%
+\contentsline {subsubsection}{\numberline {6.8.2.2}updateProgressBar}{20}{subsubsection.6.8.2.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.3}updateStatusMsg}{20}{subsubsection.6.8.2.3}%
+\contentsline {section}{\numberline {6.9}Слоты Radiooooo}{21}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Подробное описание}{21}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Открытые слоты}{21}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}durationChanged}{21}{subsubsection.6.9.2.1}%
+\contentsline {subsubsection}{\numberline {6.9.2.2}getMaxDeacde}{22}{subsubsection.6.9.2.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.3}getMinDecade}{22}{subsubsection.6.9.2.3}%
+\contentsline {subsubsection}{\numberline {6.9.2.4}getMoods}{22}{subsubsection.6.9.2.4}%
+\contentsline {subsubsection}{\numberline {6.9.2.5}getQuickCountries}{23}{subsubsection.6.9.2.5}%
+\contentsline {subsubsection}{\numberline {6.9.2.6}loadConfig}{23}{subsubsection.6.9.2.6}%
+\contentsline {subsubsection}{\numberline {6.9.2.7}playTrigger}{23}{subsubsection.6.9.2.7}%
+\contentsline {subsubsection}{\numberline {6.9.2.8}setVolume}{23}{subsubsection.6.9.2.8}%
+\contentsline {subsubsection}{\numberline {6.9.2.9}stateChanged}{24}{subsubsection.6.9.2.9}%
+\contentsline {subsubsection}{\numberline {6.9.2.10}updateConfig}{24}{subsubsection.6.9.2.10}%
+\contentsline {subsubsection}{\numberline {6.9.2.11}updateProgress}{24}{subsubsection.6.9.2.11}%
+\contentsline {chapter}{\numberline {7}Классы}{25}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Класс Configurator}{25}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Подробное описание}{26}{subsection.7.1.1}%
+\contentsline {section}{\numberline {7.2}Класс Radiooooo}{27}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Подробное описание}{29}{subsection.7.2.1}%
+\contentsline {chapter}{{\cyrillictext \CYRP \cyrr \cyre \cyrd \cyrm \cyre \cyrt \cyrn \cyrery \cyrishrt \ \cyru \cyrk \cyra \cyrz \cyra \cyrt \cyre \cyrl \cyrsftsn }}{31}{section*.32}%

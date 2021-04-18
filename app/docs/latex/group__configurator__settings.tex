@@ -1,0 +1,131 @@
+\hypertarget{group__configurator__settings}{}\doxysection{Настройки}
+\label{group__configurator__settings}\index{Настройки@{Настройки}}
+
+
+Функции и переменные для работы с настройками приложения  
+
+
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__configurator__settings_ga3faa57cedd0a8b5180bc71aefe9bc3f5}\label{group__configurator__settings_ga3faa57cedd0a8b5180bc71aefe9bc3f5}} 
+void \mbox{\hyperlink{group__configurator__settings_ga3faa57cedd0a8b5180bc71aefe9bc3f5}{Configurator\+::init\+Config}} ()
+\begin{DoxyCompactList}\small\item\em Заполняет настройки со значениями по умолчанию \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__configurator__settings_ga0e5553d06503f9f4bbb39777c104db02}{Configurator\+::update\+Config}} (QString param, QString value, bool enable)
+\begin{DoxyCompactList}\small\item\em Обновляет настройки приложения \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__configurator__base_gad84332a8098f54847768e6ed2ecbf231}{Config\+Storage}} \mbox{\hyperlink{group__configurator__settings_gada48024142a021d66f4f49af36582e09}{Configurator\+::get\+Config}} ()
+\begin{DoxyCompactList}\small\item\em Геттер для настроек приложения \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{group__configurator__settings_gada6e84e12dede9188ce6b64b06935270}{Configurator\+::get\+Config\+Str}} ()
+\begin{DoxyCompactList}\small\item\em Геттер для настроек приложения \end{DoxyCompactList}\item 
+QJson\+Document \mbox{\hyperlink{group__configurator__settings_ga1aa1b122c37492b03e711219e5ac1727}{Configurator\+::config\+To\+Json}} (\mbox{\hyperlink{group__configurator__base_gad84332a8098f54847768e6ed2ecbf231}{Config\+Storage}} c)
+\begin{DoxyCompactList}\small\item\em Конвертирует настройки в json документ \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{group__configurator__settings_ga32fefdf79fdfaab3f66d9981ec88abeb}{Configurator\+::get\+Quick\+Countries}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает список стран для быстрой настройки в виде строки (для QML) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__configurator__settings_ga1a45c44ffccf6cfb5dfbcaf3e525ab42}\label{group__configurator__settings_ga1a45c44ffccf6cfb5dfbcaf3e525ab42}} 
+const QList$<$ QString $>$ \mbox{\hyperlink{group__configurator__settings_ga1a45c44ffccf6cfb5dfbcaf3e525ab42}{Configurator\+::moods}} = def\+Moods
+\begin{DoxyCompactList}\small\item\em Все доступные \char`\"{}настроения\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__configurator__settings_ga82cb2283cafe25e8f5ee57ce7a0db05c}\label{group__configurator__settings_ga82cb2283cafe25e8f5ee57ce7a0db05c}} 
+const QList$<$ QString $>$ \mbox{\hyperlink{group__configurator__settings_ga82cb2283cafe25e8f5ee57ce7a0db05c}{Configurator\+::all\+Countries}} = \mbox{\hyperlink{group__constants_ga94c7e9aa8256526ea8635dfacf5f93e7}{def\+Countries}}
+\begin{DoxyCompactList}\small\item\em Все доступные страны \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__configurator__settings_gac0e3796f4c5c0d9e8b4e074bd78c1636}\label{group__configurator__settings_gac0e3796f4c5c0d9e8b4e074bd78c1636}} 
+const QMap$<$ QString, QString $>$ \mbox{\hyperlink{group__configurator__settings_gac0e3796f4c5c0d9e8b4e074bd78c1636}{Configurator\+::default\+Config}} = \mbox{\hyperlink{group__constants_ga04f79c4ef19c2eb68e0e7f67696652a1}{def\+Config}}
+\begin{DoxyCompactList}\small\item\em Настройки по умолчанию \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__configurator__settings_gaf8d295ebe13f50630bd5074243c58de8}\label{group__configurator__settings_gaf8d295ebe13f50630bd5074243c58de8}} 
+const int \mbox{\hyperlink{group__configurator__settings_gaf8d295ebe13f50630bd5074243c58de8}{Configurator\+::min\+Decade}} = 1910
+\begin{DoxyCompactList}\small\item\em Минимальный год \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__configurator__settings_ga104056a51dd769c2698efa71e6d0f8ed}\label{group__configurator__settings_ga104056a51dd769c2698efa71e6d0f8ed}} 
+const int \mbox{\hyperlink{group__configurator__settings_ga104056a51dd769c2698efa71e6d0f8ed}{Configurator\+::max\+Decade}} = 2020
+\begin{DoxyCompactList}\small\item\em Максимальный год \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__configurator__settings_ga4cb5c3f9674fbed65685826f9eba1370}\label{group__configurator__settings_ga4cb5c3f9674fbed65685826f9eba1370}} 
+const QMap$<$ QString, QString $>$ \mbox{\hyperlink{group__configurator__settings_ga4cb5c3f9674fbed65685826f9eba1370}{Configurator\+::quick\+Countries}} = \mbox{\hyperlink{group__constants_ga736192ee010339b350f741513879944a}{quick\+Setup\+Countries}}
+\begin{DoxyCompactList}\small\item\em Список стран для быстрой настройки \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__configurator__settings_gab5f764470eaa664c0934bca61d9886d0}\label{group__configurator__settings_gab5f764470eaa664c0934bca61d9886d0}} 
+\mbox{\hyperlink{group__configurator__base_gad84332a8098f54847768e6ed2ecbf231}{Config\+Storage}} \mbox{\hyperlink{group__configurator__settings_gab5f764470eaa664c0934bca61d9886d0}{Configurator\+::config}}
+\begin{DoxyCompactList}\small\item\em Переменная для хранения настроек \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Функции и переменные для работы с настройками приложения 
+
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{group__configurator__settings_ga1aa1b122c37492b03e711219e5ac1727}\label{group__configurator__settings_ga1aa1b122c37492b03e711219e5ac1727}} 
+\index{Настройки@{Настройки}!configToJson@{configToJson}}
+\index{configToJson@{configToJson}!Настройки@{Настройки}}
+\doxysubsubsection{\texorpdfstring{configToJson()}{configToJson()}}
+{\footnotesize\ttfamily QJson\+Document Configurator\+::config\+To\+Json (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__configurator__base_gad84332a8098f54847768e6ed2ecbf231}{Configurator\+::\+Config\+Storage}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Конвертирует настройки в json документ 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em c} & -\/ список настроек \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+QJson\+Document -\/ json документ с настройками 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__configurator__settings_gada48024142a021d66f4f49af36582e09}\label{group__configurator__settings_gada48024142a021d66f4f49af36582e09}} 
+\index{Настройки@{Настройки}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!Настройки@{Настройки}}
+\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__configurator__base_gad84332a8098f54847768e6ed2ecbf231}{Configurator\+::\+Config\+Storage}} Configurator\+::get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Геттер для настроек приложения 
+
+\begin{DoxyReturn}{Возвращает}
+настройки в виде Config\+Storage -\/ key\+:value структуры с настройками приложения 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__configurator__settings_gada6e84e12dede9188ce6b64b06935270}\label{group__configurator__settings_gada6e84e12dede9188ce6b64b06935270}} 
+\index{Настройки@{Настройки}!getConfigStr@{getConfigStr}}
+\index{getConfigStr@{getConfigStr}!Настройки@{Настройки}}
+\doxysubsubsection{\texorpdfstring{getConfigStr()}{getConfigStr()}}
+{\footnotesize\ttfamily QString Configurator\+::get\+Config\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Геттер для настроек приложения 
+
+\begin{DoxyReturn}{Возвращает}
+настройки в виде json строки 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__configurator__settings_ga32fefdf79fdfaab3f66d9981ec88abeb}\label{group__configurator__settings_ga32fefdf79fdfaab3f66d9981ec88abeb}} 
+\index{Настройки@{Настройки}!getQuickCountries@{getQuickCountries}}
+\index{getQuickCountries@{getQuickCountries}!Настройки@{Настройки}}
+\doxysubsubsection{\texorpdfstring{getQuickCountries()}{getQuickCountries()}}
+{\footnotesize\ttfamily QString Configurator\+::get\+Quick\+Countries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает список стран для быстрой настройки в виде строки (для QML) 
+
+\begin{DoxyReturn}{Возвращает}
+QString -\/ json строка со списком стран 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__configurator__settings_ga0e5553d06503f9f4bbb39777c104db02}\label{group__configurator__settings_ga0e5553d06503f9f4bbb39777c104db02}} 
+\index{Настройки@{Настройки}!updateConfig@{updateConfig}}
+\index{updateConfig@{updateConfig}!Настройки@{Настройки}}
+\doxysubsubsection{\texorpdfstring{updateConfig()}{updateConfig()}}
+{\footnotesize\ttfamily void Configurator\+::update\+Config (\begin{DoxyParamCaption}\item[{QString}]{param,  }\item[{QString}]{value,  }\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Обновляет настройки приложения 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em param} & -\/ имя параметра \\
+\hline
+{\em value} & -\/ значение \\
+\hline
+{\em enable} & -\/ флаг, если true, то добавить настройку, иначе удалить \\
+\hline
+\end{DoxyParams}

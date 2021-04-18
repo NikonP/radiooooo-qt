@@ -18,74 +18,58 @@
 \doxysubsection*{Открытые типы}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classConfigurator_ad84332a8098f54847768e6ed2ecbf231}\label{classConfigurator_ad84332a8098f54847768e6ed2ecbf231}} 
-typedef QMap$<$ QString, QList$<$ QString $>$ $>$ \mbox{\hyperlink{classConfigurator_ad84332a8098f54847768e6ed2ecbf231}{Config\+Storage}}
+typedef QMap$<$ QString, QList$<$ QString $>$ $>$ \mbox{\hyperlink{group__configurator__base_gad84332a8098f54847768e6ed2ecbf231}{Config\+Storage}}
 \begin{DoxyCompactList}\small\item\em Тип данных для хранения настроек \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classConfigurator_ac0dcebf9bc248dd7473ee442a6822ca3}{Configurator}} (QObject $\ast$parent=nullptr)
+\mbox{\hyperlink{group__configurator__base_gac0dcebf9bc248dd7473ee442a6822ca3}{Configurator}} (QObject $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConfigurator}{Configurator}} -\/ дефолтный констуктор класса QObject. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_a910f82ae90f516ad9376e513c119eff7}\label{classConfigurator_a910f82ae90f516ad9376e513c119eff7}} 
-void \mbox{\hyperlink{classConfigurator_a910f82ae90f516ad9376e513c119eff7}{init\+Dirs}} ()
+void \mbox{\hyperlink{group__configurator__fs_ga910f82ae90f516ad9376e513c119eff7}{init\+Dirs}} ()
 \begin{DoxyCompactList}\small\item\em Создаёт папки в домашней дирректории приложения \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_a3faa57cedd0a8b5180bc71aefe9bc3f5}\label{classConfigurator_a3faa57cedd0a8b5180bc71aefe9bc3f5}} 
-void \mbox{\hyperlink{classConfigurator_a3faa57cedd0a8b5180bc71aefe9bc3f5}{init\+Config}} ()
+void \mbox{\hyperlink{group__configurator__settings_ga3faa57cedd0a8b5180bc71aefe9bc3f5}{init\+Config}} ()
 \begin{DoxyCompactList}\small\item\em Заполняет настройки со значениями по умолчанию \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_a3a58feefb0b87b8a8e3d156f0a999fae}\label{classConfigurator_a3a58feefb0b87b8a8e3d156f0a999fae}} 
-void \mbox{\hyperlink{classConfigurator_a3a58feefb0b87b8a8e3d156f0a999fae}{save\+Config}} ()
+void \mbox{\hyperlink{group__configurator__fs_ga3a58feefb0b87b8a8e3d156f0a999fae}{save\+Config}} ()
 \begin{DoxyCompactList}\small\item\em Сохраняет настройки в json файл \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_ad8c95a520af26406bfd268e920e74540}\label{classConfigurator_ad8c95a520af26406bfd268e920e74540}} 
-void \mbox{\hyperlink{classConfigurator_ad8c95a520af26406bfd268e920e74540}{load\+Config}} ()
+void \mbox{\hyperlink{group__configurator__fs_gad8c95a520af26406bfd268e920e74540}{load\+Config}} ()
 \begin{DoxyCompactList}\small\item\em Загружает настройки из json файла \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classConfigurator_a0e5553d06503f9f4bbb39777c104db02}{update\+Config}} (QString param, QString value, bool enable)
+void \mbox{\hyperlink{group__configurator__settings_ga0e5553d06503f9f4bbb39777c104db02}{update\+Config}} (QString param, QString value, bool enable)
 \begin{DoxyCompactList}\small\item\em Обновляет настройки приложения \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classConfigurator_ad84332a8098f54847768e6ed2ecbf231}{Config\+Storage}} \mbox{\hyperlink{classConfigurator_ada48024142a021d66f4f49af36582e09}{get\+Config}} ()
+\mbox{\hyperlink{group__configurator__base_gad84332a8098f54847768e6ed2ecbf231}{Config\+Storage}} \mbox{\hyperlink{group__configurator__settings_gada48024142a021d66f4f49af36582e09}{get\+Config}} ()
 \begin{DoxyCompactList}\small\item\em Геттер для настроек приложения \end{DoxyCompactList}\item 
-QString \mbox{\hyperlink{classConfigurator_ada6e84e12dede9188ce6b64b06935270}{get\+Config\+Str}} ()
+QString \mbox{\hyperlink{group__configurator__settings_gada6e84e12dede9188ce6b64b06935270}{get\+Config\+Str}} ()
 \begin{DoxyCompactList}\small\item\em Геттер для настроек приложения \end{DoxyCompactList}\item 
-QJson\+Document \mbox{\hyperlink{classConfigurator_a1aa1b122c37492b03e711219e5ac1727}{config\+To\+Json}} (\mbox{\hyperlink{classConfigurator_ad84332a8098f54847768e6ed2ecbf231}{Config\+Storage}} c)
+QJson\+Document \mbox{\hyperlink{group__configurator__settings_ga1aa1b122c37492b03e711219e5ac1727}{config\+To\+Json}} (\mbox{\hyperlink{group__configurator__base_gad84332a8098f54847768e6ed2ecbf231}{Config\+Storage}} c)
 \begin{DoxyCompactList}\small\item\em Конвертирует настройки в json документ \end{DoxyCompactList}\item 
-QString \mbox{\hyperlink{classConfigurator_a32fefdf79fdfaab3f66d9981ec88abeb}{get\+Quick\+Countries}} ()
+QString \mbox{\hyperlink{group__configurator__settings_ga32fefdf79fdfaab3f66d9981ec88abeb}{get\+Quick\+Countries}} ()
 \begin{DoxyCompactList}\small\item\em Возвращает список стран для быстрой настройки в виде строки (для QML) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Открытые атрибуты}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classConfigurator_a1a45c44ffccf6cfb5dfbcaf3e525ab42}\label{classConfigurator_a1a45c44ffccf6cfb5dfbcaf3e525ab42}} 
-const QList$<$ QString $>$ \mbox{\hyperlink{classConfigurator_a1a45c44ffccf6cfb5dfbcaf3e525ab42}{moods}} = def\+Moods
+const QList$<$ QString $>$ \mbox{\hyperlink{group__configurator__settings_ga1a45c44ffccf6cfb5dfbcaf3e525ab42}{moods}} = def\+Moods
 \begin{DoxyCompactList}\small\item\em Все доступные \char`\"{}настроения\char`\"{}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_a82cb2283cafe25e8f5ee57ce7a0db05c}\label{classConfigurator_a82cb2283cafe25e8f5ee57ce7a0db05c}} 
-const QList$<$ QString $>$ \mbox{\hyperlink{classConfigurator_a82cb2283cafe25e8f5ee57ce7a0db05c}{all\+Countries}} = def\+Countries
+const QList$<$ QString $>$ \mbox{\hyperlink{group__configurator__settings_ga82cb2283cafe25e8f5ee57ce7a0db05c}{all\+Countries}} = \mbox{\hyperlink{group__constants_ga94c7e9aa8256526ea8635dfacf5f93e7}{def\+Countries}}
 \begin{DoxyCompactList}\small\item\em Все доступные страны \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_ac0e3796f4c5c0d9e8b4e074bd78c1636}\label{classConfigurator_ac0e3796f4c5c0d9e8b4e074bd78c1636}} 
-const QMap$<$ QString, QString $>$ \mbox{\hyperlink{classConfigurator_ac0e3796f4c5c0d9e8b4e074bd78c1636}{default\+Config}} = def\+Config
+const QMap$<$ QString, QString $>$ \mbox{\hyperlink{group__configurator__settings_gac0e3796f4c5c0d9e8b4e074bd78c1636}{default\+Config}} = \mbox{\hyperlink{group__constants_ga04f79c4ef19c2eb68e0e7f67696652a1}{def\+Config}}
 \begin{DoxyCompactList}\small\item\em Настройки по умолчанию \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_af8d295ebe13f50630bd5074243c58de8}\label{classConfigurator_af8d295ebe13f50630bd5074243c58de8}} 
-const int \mbox{\hyperlink{classConfigurator_af8d295ebe13f50630bd5074243c58de8}{min\+Decade}} = 1910
+const int \mbox{\hyperlink{group__configurator__settings_gaf8d295ebe13f50630bd5074243c58de8}{min\+Decade}} = 1910
 \begin{DoxyCompactList}\small\item\em Минимальный год \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_a104056a51dd769c2698efa71e6d0f8ed}\label{classConfigurator_a104056a51dd769c2698efa71e6d0f8ed}} 
-const int \mbox{\hyperlink{classConfigurator_a104056a51dd769c2698efa71e6d0f8ed}{max\+Decade}} = 2020
+const int \mbox{\hyperlink{group__configurator__settings_ga104056a51dd769c2698efa71e6d0f8ed}{max\+Decade}} = 2020
 \begin{DoxyCompactList}\small\item\em Максимальный год \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_a4cb5c3f9674fbed65685826f9eba1370}\label{classConfigurator_a4cb5c3f9674fbed65685826f9eba1370}} 
-const QMap$<$ QString, QString $>$ \mbox{\hyperlink{classConfigurator_a4cb5c3f9674fbed65685826f9eba1370}{quick\+Countries}} = quick\+Setup\+Countries
+const QMap$<$ QString, QString $>$ \mbox{\hyperlink{group__configurator__settings_ga4cb5c3f9674fbed65685826f9eba1370}{quick\+Countries}} = \mbox{\hyperlink{group__constants_ga736192ee010339b350f741513879944a}{quick\+Setup\+Countries}}
 \begin{DoxyCompactList}\small\item\em Список стран для быстрой настройки \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_af3231ec1daec351bf9d226aa7e8457a4}\label{classConfigurator_af3231ec1daec351bf9d226aa7e8457a4}} 
-const QString \mbox{\hyperlink{classConfigurator_af3231ec1daec351bf9d226aa7e8457a4}{app\+Dir}} = \char`\"{}.radiooooo-\/qt\char`\"{}
+const QString \mbox{\hyperlink{group__configurator__fs_gaf3231ec1daec351bf9d226aa7e8457a4}{app\+Dir}} = \char`\"{}.radiooooo-\/qt\char`\"{}
 \begin{DoxyCompactList}\small\item\em Имя для домашней дирректории приложения \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_ab3e80742d3a587b0ab73e80e6204191c}\label{classConfigurator_ab3e80742d3a587b0ab73e80e6204191c}} 
-const QString \mbox{\hyperlink{classConfigurator_ab3e80742d3a587b0ab73e80e6204191c}{app\+Dir\+Path}} = QDir\+::home\+Path() + \char`\"{}/\char`\"{} + \mbox{\hyperlink{classConfigurator_af3231ec1daec351bf9d226aa7e8457a4}{app\+Dir}}
+const QString \mbox{\hyperlink{group__configurator__fs_gab3e80742d3a587b0ab73e80e6204191c}{app\+Dir\+Path}} = QDir\+::home\+Path() + \char`\"{}/\char`\"{} + \mbox{\hyperlink{group__configurator__fs_gaf3231ec1daec351bf9d226aa7e8457a4}{app\+Dir}}
 \begin{DoxyCompactList}\small\item\em Путь к домашней дирректории приложения \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_af61e4a80b1878b8195f07a12476a5c3a}\label{classConfigurator_af61e4a80b1878b8195f07a12476a5c3a}} 
-const QString \mbox{\hyperlink{classConfigurator_af61e4a80b1878b8195f07a12476a5c3a}{config\+File\+Path}} = \mbox{\hyperlink{classConfigurator_ab3e80742d3a587b0ab73e80e6204191c}{app\+Dir\+Path}} + \char`\"{}/config.\+json\char`\"{}
+const QString \mbox{\hyperlink{group__configurator__fs_gaf61e4a80b1878b8195f07a12476a5c3a}{config\+File\+Path}} = \mbox{\hyperlink{group__configurator__fs_gab3e80742d3a587b0ab73e80e6204191c}{app\+Dir\+Path}} + \char`\"{}/config.\+json\char`\"{}
 \begin{DoxyCompactList}\small\item\em Путь к json файлу для настроек \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classConfigurator_acf14f51381a9fedadc662d88678384ff}\label{classConfigurator_acf14f51381a9fedadc662d88678384ff}} 
-const QString \mbox{\hyperlink{classConfigurator_acf14f51381a9fedadc662d88678384ff}{audio\+Dir\+Path}} = \mbox{\hyperlink{classConfigurator_ab3e80742d3a587b0ab73e80e6204191c}{app\+Dir\+Path}} + \char`\"{}/\char`\"{} + \char`\"{}audio-\/files\char`\"{}
+const QString \mbox{\hyperlink{group__configurator__fs_gacf14f51381a9fedadc662d88678384ff}{audio\+Dir\+Path}} = \mbox{\hyperlink{group__configurator__fs_gab3e80742d3a587b0ab73e80e6204191c}{app\+Dir\+Path}} + \char`\"{}/\char`\"{} + \char`\"{}audio-\/files\char`\"{}
 \begin{DoxyCompactList}\small\item\em Путь к папке для хранения аудиофайлов \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Закрытые данные}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classConfigurator_ab5f764470eaa664c0934bca61d9886d0}\label{classConfigurator_ab5f764470eaa664c0934bca61d9886d0}} 
-\mbox{\hyperlink{classConfigurator_ad84332a8098f54847768e6ed2ecbf231}{Config\+Storage}} \mbox{\hyperlink{classConfigurator_ab5f764470eaa664c0934bca61d9886d0}{config}}
+\mbox{\hyperlink{group__configurator__base_gad84332a8098f54847768e6ed2ecbf231}{Config\+Storage}} \mbox{\hyperlink{group__configurator__settings_gab5f764470eaa664c0934bca61d9886d0}{config}}
 \begin{DoxyCompactList}\small\item\em Переменная для хранения настроек \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -93,104 +77,7 @@ const QString \mbox{\hyperlink{classConfigurator_acf14f51381a9fedadc662d88678384
 Используется для загрузки и сохранения настроек приложения. 
 
 \begin{DoxyRefDesc}{Необходимо сделать}
-\item[\mbox{\hyperlink{todo__todo000001}{Необходимо сделать}}]Переписать взаимодействие с QML придерживаясь MVP \end{DoxyRefDesc}
-
-
-\doxysubsection{Конструктор(ы)}
-\mbox{\Hypertarget{classConfigurator_ac0dcebf9bc248dd7473ee442a6822ca3}\label{classConfigurator_ac0dcebf9bc248dd7473ee442a6822ca3}} 
-\index{Configurator@{Configurator}!Configurator@{Configurator}}
-\index{Configurator@{Configurator}!Configurator@{Configurator}}
-\doxysubsubsection{\texorpdfstring{Configurator()}{Configurator()}}
-{\footnotesize\ttfamily Configurator\+::\+Configurator (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-\mbox{\hyperlink{classConfigurator}{Configurator}} -\/ дефолтный констуктор класса QObject. 
-
-
-\begin{DoxyParams}{Аргументы}
-{\em parent} & -\/ указатель на родительский QObject \\
-\hline
-\end{DoxyParams}
-
-
-\doxysubsection{Методы}
-\mbox{\Hypertarget{classConfigurator_a1aa1b122c37492b03e711219e5ac1727}\label{classConfigurator_a1aa1b122c37492b03e711219e5ac1727}} 
-\index{Configurator@{Configurator}!configToJson@{configToJson}}
-\index{configToJson@{configToJson}!Configurator@{Configurator}}
-\doxysubsubsection{\texorpdfstring{configToJson()}{configToJson()}}
-{\footnotesize\ttfamily QJson\+Document Configurator\+::config\+To\+Json (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classConfigurator_ad84332a8098f54847768e6ed2ecbf231}{Configurator\+::\+Config\+Storage}}}]{c }\end{DoxyParamCaption})}
-
-
-
-Конвертирует настройки в json документ 
-
-
-\begin{DoxyParams}{Аргументы}
-{\em c} & -\/ список настроек \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Возвращает}
-QJson\+Document -\/ json документ с настройками 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classConfigurator_ada48024142a021d66f4f49af36582e09}\label{classConfigurator_ada48024142a021d66f4f49af36582e09}} 
-\index{Configurator@{Configurator}!getConfig@{getConfig}}
-\index{getConfig@{getConfig}!Configurator@{Configurator}}
-\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classConfigurator_ad84332a8098f54847768e6ed2ecbf231}{Configurator\+::\+Config\+Storage}} Configurator\+::get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Геттер для настроек приложения 
-
-\begin{DoxyReturn}{Возвращает}
-настройки в виде Config\+Storage -\/ key\+:value структуры с настройками приложения 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classConfigurator_ada6e84e12dede9188ce6b64b06935270}\label{classConfigurator_ada6e84e12dede9188ce6b64b06935270}} 
-\index{Configurator@{Configurator}!getConfigStr@{getConfigStr}}
-\index{getConfigStr@{getConfigStr}!Configurator@{Configurator}}
-\doxysubsubsection{\texorpdfstring{getConfigStr()}{getConfigStr()}}
-{\footnotesize\ttfamily QString Configurator\+::get\+Config\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Геттер для настроек приложения 
-
-\begin{DoxyReturn}{Возвращает}
-настройки в виде json строки 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classConfigurator_a32fefdf79fdfaab3f66d9981ec88abeb}\label{classConfigurator_a32fefdf79fdfaab3f66d9981ec88abeb}} 
-\index{Configurator@{Configurator}!getQuickCountries@{getQuickCountries}}
-\index{getQuickCountries@{getQuickCountries}!Configurator@{Configurator}}
-\doxysubsubsection{\texorpdfstring{getQuickCountries()}{getQuickCountries()}}
-{\footnotesize\ttfamily QString Configurator\+::get\+Quick\+Countries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Возвращает список стран для быстрой настройки в виде строки (для QML) 
-
-\begin{DoxyReturn}{Возвращает}
-QString -\/ json строка со списком стран 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classConfigurator_a0e5553d06503f9f4bbb39777c104db02}\label{classConfigurator_a0e5553d06503f9f4bbb39777c104db02}} 
-\index{Configurator@{Configurator}!updateConfig@{updateConfig}}
-\index{updateConfig@{updateConfig}!Configurator@{Configurator}}
-\doxysubsubsection{\texorpdfstring{updateConfig()}{updateConfig()}}
-{\footnotesize\ttfamily void Configurator\+::update\+Config (\begin{DoxyParamCaption}\item[{QString}]{param,  }\item[{QString}]{value,  }\item[{bool}]{enable }\end{DoxyParamCaption})}
-
-
-
-Обновляет настройки приложения 
-
-
-\begin{DoxyParams}{Аргументы}
-{\em param} & -\/ имя параметра \\
-\hline
-{\em value} & -\/ значение \\
-\hline
-{\em enable} & -\/ флаг, если true, то добавить настройку, иначе удалить \\
-\hline
-\end{DoxyParams}
+\item[\mbox{\hyperlink{todo__todo000001}{Необходимо сделать}}]Переписать взаимодействие с QML придерживаясь MVP\end{DoxyRefDesc}
 
 
 Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}

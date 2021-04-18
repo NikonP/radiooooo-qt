@@ -1,0 +1,39 @@
+\hypertarget{group__configurator__fs}{}\doxysection{Файловая система}
+\label{group__configurator__fs}\index{Файловая система@{Файловая система}}
+
+
+Функции и переменные для работы с файловой системой  
+
+
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__configurator__fs_ga910f82ae90f516ad9376e513c119eff7}\label{group__configurator__fs_ga910f82ae90f516ad9376e513c119eff7}} 
+void \mbox{\hyperlink{group__configurator__fs_ga910f82ae90f516ad9376e513c119eff7}{Configurator\+::init\+Dirs}} ()
+\begin{DoxyCompactList}\small\item\em Создаёт папки в домашней дирректории приложения \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__configurator__fs_ga3a58feefb0b87b8a8e3d156f0a999fae}\label{group__configurator__fs_ga3a58feefb0b87b8a8e3d156f0a999fae}} 
+void \mbox{\hyperlink{group__configurator__fs_ga3a58feefb0b87b8a8e3d156f0a999fae}{Configurator\+::save\+Config}} ()
+\begin{DoxyCompactList}\small\item\em Сохраняет настройки в json файл \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__configurator__fs_gad8c95a520af26406bfd268e920e74540}\label{group__configurator__fs_gad8c95a520af26406bfd268e920e74540}} 
+void \mbox{\hyperlink{group__configurator__fs_gad8c95a520af26406bfd268e920e74540}{Configurator\+::load\+Config}} ()
+\begin{DoxyCompactList}\small\item\em Загружает настройки из json файла \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__configurator__fs_gaf3231ec1daec351bf9d226aa7e8457a4}\label{group__configurator__fs_gaf3231ec1daec351bf9d226aa7e8457a4}} 
+const QString \mbox{\hyperlink{group__configurator__fs_gaf3231ec1daec351bf9d226aa7e8457a4}{Configurator\+::app\+Dir}} = \char`\"{}.radiooooo-\/qt\char`\"{}
+\begin{DoxyCompactList}\small\item\em Имя для домашней дирректории приложения \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__configurator__fs_gab3e80742d3a587b0ab73e80e6204191c}\label{group__configurator__fs_gab3e80742d3a587b0ab73e80e6204191c}} 
+const QString \mbox{\hyperlink{group__configurator__fs_gab3e80742d3a587b0ab73e80e6204191c}{Configurator\+::app\+Dir\+Path}} = QDir\+::home\+Path() + \char`\"{}/\char`\"{} + \mbox{\hyperlink{group__configurator__fs_gaf3231ec1daec351bf9d226aa7e8457a4}{app\+Dir}}
+\begin{DoxyCompactList}\small\item\em Путь к домашней дирректории приложения \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__configurator__fs_gaf61e4a80b1878b8195f07a12476a5c3a}\label{group__configurator__fs_gaf61e4a80b1878b8195f07a12476a5c3a}} 
+const QString \mbox{\hyperlink{group__configurator__fs_gaf61e4a80b1878b8195f07a12476a5c3a}{Configurator\+::config\+File\+Path}} = \mbox{\hyperlink{group__configurator__fs_gab3e80742d3a587b0ab73e80e6204191c}{app\+Dir\+Path}} + \char`\"{}/config.\+json\char`\"{}
+\begin{DoxyCompactList}\small\item\em Путь к json файлу для настроек \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__configurator__fs_gacf14f51381a9fedadc662d88678384ff}\label{group__configurator__fs_gacf14f51381a9fedadc662d88678384ff}} 
+const QString \mbox{\hyperlink{group__configurator__fs_gacf14f51381a9fedadc662d88678384ff}{Configurator\+::audio\+Dir\+Path}} = \mbox{\hyperlink{group__configurator__fs_gab3e80742d3a587b0ab73e80e6204191c}{app\+Dir\+Path}} + \char`\"{}/\char`\"{} + \char`\"{}audio-\/files\char`\"{}
+\begin{DoxyCompactList}\small\item\em Путь к папке для хранения аудиофайлов \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Функции и переменные для работы с файловой системой 
+
