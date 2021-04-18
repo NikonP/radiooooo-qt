@@ -40,7 +40,7 @@ void \mbox{\hyperlink{classRadiooooo_a4b2fd97df8b8b1b17d723aa01677b21a}{skip\+Tr
 void \mbox{\hyperlink{classRadiooooo_afaa6aef7d762f53b0e590cabec262aaf}{set\+Volume}} (int volume)
 \begin{DoxyCompactList}\small\item\em Устанавливает громкость \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classRadiooooo_a75be9ed6acdd9fd09d81ab1ac71a2093}{state\+Changed}} (QMedia\+Player\+::\+State player\+State)
-\begin{DoxyCompactList}\small\item\em Запускает следующий трек когда текущий заканчивается \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Запускает следующий трек, когда текущий заканчивается \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classRadiooooo_a726aa9d5301f364e97fae7e8a6d61f75}{duration\+Changed}} (qint64 new\+Duration)
 \begin{DoxyCompactList}\small\item\em Обновляет длительность трека \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classRadiooooo_a9ca2a1c36b6631703a166ba3b37a720b}{update\+Progress}} (qint64 pos)
@@ -61,7 +61,7 @@ void \mbox{\hyperlink{classRadiooooo_a93dbeffe542c3c360b618f238eab9370}{update\+
 void \mbox{\hyperlink{classRadiooooo_ad5f84547114dcc1f0e7e02ab02e69d52}{update\+Status\+Msg}} (QString message)
 \begin{DoxyCompactList}\small\item\em Обновляет сообщение со статусом \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classRadiooooo_ac858a8e6164ce86d1d2c1b05bea806a3}{force\+Pause}} ()
-\begin{DoxyCompactList}\small\item\em Обнолвет состояние кнопки \char`\"{}play/pause\char`\"{} в QML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Обновляет состояние кнопки \char`\"{}play/pause\char`\"{} в QML. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
@@ -188,7 +188,7 @@ QString -\/ полный путь к файлу
 
 
 
-Обнолвет состояние кнопки \char`\"{}play/pause\char`\"{} в QML. 
+Обновляет состояние кнопки \char`\"{}play/pause\char`\"{} в QML. 
 
 \begin{DoxyRefDesc}{Необходимо сделать}
 \item[\mbox{\hyperlink{todo__todo000002}{Необходимо сделать}}]Переписать без вызова QML из C++ (например при помощи проверки флага в QML) \end{DoxyRefDesc}
@@ -303,7 +303,7 @@ QString с настройками
 
 
 \begin{DoxyParams}{Аргументы}
-{\em play} & -\/ запустить (true) или отсановить (false) \\
+{\em play} & -\/ запустить (true) или остановить (false) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classRadiooooo_a3f679ac8a513529670baf1a76e37000c}\label{classRadiooooo_a3f679ac8a513529670baf1a76e37000c}} 
@@ -349,7 +349,7 @@ true, если удалось сохранить
 
 
 
-Запускает следующий трек когда текущий заканчивается 
+Запускает следующий трек, когда текущий заканчивается 
 
 
 \begin{DoxyParams}{Аргументы}

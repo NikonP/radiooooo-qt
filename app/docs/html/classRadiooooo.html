@@ -118,7 +118,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:afaa6aef7d762f53b0e590cabec262aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает громкость  <a href="classRadiooooo.html#afaa6aef7d762f53b0e590cabec262aaf">Подробнее...</a><br /></td></tr>
 <tr class="separator:afaa6aef7d762f53b0e590cabec262aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75be9ed6acdd9fd09d81ab1ac71a2093"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiooooo.html#a75be9ed6acdd9fd09d81ab1ac71a2093">stateChanged</a> (QMediaPlayer::State playerState)</td></tr>
-<tr class="memdesc:a75be9ed6acdd9fd09d81ab1ac71a2093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запускает следующий трек когда текущий заканчивается  <a href="classRadiooooo.html#a75be9ed6acdd9fd09d81ab1ac71a2093">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:a75be9ed6acdd9fd09d81ab1ac71a2093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запускает следующий трек, когда текущий заканчивается  <a href="classRadiooooo.html#a75be9ed6acdd9fd09d81ab1ac71a2093">Подробнее...</a><br /></td></tr>
 <tr class="separator:a75be9ed6acdd9fd09d81ab1ac71a2093"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a726aa9d5301f364e97fae7e8a6d61f75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiooooo.html#a726aa9d5301f364e97fae7e8a6d61f75">durationChanged</a> (qint64 newDuration)</td></tr>
 <tr class="memdesc:a726aa9d5301f364e97fae7e8a6d61f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет длительность трека  <a href="classRadiooooo.html#a726aa9d5301f364e97fae7e8a6d61f75">Подробнее...</a><br /></td></tr>
@@ -148,7 +148,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:ad5f84547114dcc1f0e7e02ab02e69d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет сообщение со статусом  <a href="classRadiooooo.html#ad5f84547114dcc1f0e7e02ab02e69d52">Подробнее...</a><br /></td></tr>
 <tr class="separator:ad5f84547114dcc1f0e7e02ab02e69d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac858a8e6164ce86d1d2c1b05bea806a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiooooo.html#ac858a8e6164ce86d1d2c1b05bea806a3">forcePause</a> ()</td></tr>
-<tr class="memdesc:ac858a8e6164ce86d1d2c1b05bea806a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обнолвет состояние кнопки "play/pause" в QML.  <a href="classRadiooooo.html#ac858a8e6164ce86d1d2c1b05bea806a3">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:ac858a8e6164ce86d1d2c1b05bea806a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет состояние кнопки "play/pause" в QML.  <a href="classRadiooooo.html#ac858a8e6164ce86d1d2c1b05bea806a3">Подробнее...</a><br /></td></tr>
 <tr class="separator:ac858a8e6164ce86d1d2c1b05bea806a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -362,7 +362,7 @@ QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </table>
 </div><div class="memdoc">
 
-<p>Обнолвет состояние кнопки "play/pause" в QML. </p>
+<p>Обновляет состояние кнопки "play/pause" в QML. </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Необходимо сделать:</a></b></dt><dd>Переписать без вызова QML из C++ (например при помощи проверки флага в QML) </dd></dl>
 
 </div>
@@ -598,7 +598,7 @@ QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <p>Изменяет состояние аудиоплеера </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">play</td><td>- запустить (true) или отсановить (false) </td></tr>
+    <tr><td class="paramname">play</td><td>- запустить (true) или остановить (false) </td></tr>
   </table>
   </dd>
 </dl>
@@ -709,7 +709,7 @@ QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><a cl
 </table>
 </div><div class="memdoc">
 
-<p>Запускает следующий трек когда текущий заканчивается </p>
+<p>Запускает следующий трек, когда текущий заканчивается </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">playerState</td><td>- состояние плеера </td></tr>
