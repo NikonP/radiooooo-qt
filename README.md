@@ -5,4 +5,4 @@
 
 [![Build Status](https://travis-ci.org/NikonP/radiooooo-qt.svg?branch=master)](https://travis-ci.org/NikonP/radiooooo-qt)
 
-[Документация](https://nikonp.github.io/radiooooo-qt/docs/html/)
+[Документация](https://nikonp.github.io/radiooooo-qt/app/docs/html/)
