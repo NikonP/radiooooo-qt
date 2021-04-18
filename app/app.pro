@@ -42,3 +42,6 @@ HEADERS += \
     configurator.h \
     defaults.h \
     radiooooo.h
+
+DISTFILES += \
+    Doxyfile

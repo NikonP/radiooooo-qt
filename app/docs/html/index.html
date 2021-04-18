@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Radiooooo Qt: Документация Radiooooo-Qt</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="vintage-radio.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Radiooooo Qt
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Клиент для Radiooooo.app</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Документация Radiooooo-Qt </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_DOCS"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Классы:</h1>
+<ul>
+<li><a class="el" href="classConfigurator.html" title="Используется для загрузки и сохранения настроек приложения.">Configurator</a> - класс для работы с настройками приложения</li>
+<li><a class="el" href="classRadiooooo.html" title="Реализует взаимодействие с https://radiooooo.app/ и логику аудиоплеера">Radiooooo</a> - класс для работы с API и аудиофайлами</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Заголовочные файлы:</h1>
+<ul>
+<li><a class="el" href="configurator_8h_source.html">configurator.h</a> - заголовочный файл <a class="el" href="classConfigurator.html">класса Configurator</a></li>
+<li><a class="el" href="radiooooo_8h_source.html">radiooooo.h</a> - заголовочный файл <a class="el" href="classRadiooooo.html">класса Radiooooo</a></li>
+<li><a class="el" href="defaults_8h_source.html">defaults.h</a> - заголовочный файл со значениями по умолчанию</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Сигналы и слоты</h1>
+<p>Ассинхронные взаимодействия (в основном с UI) происходят при помощи сигналов и слотов. Например, у <a class="el" href="classRadiooooo.html">класса Radiooooo</a> есть <a class="el" href="classRadiooooo.html#af26bbcd1435e586ee4f3d743d571c6f7">слот updateConfig</a> для получения сигнала из QML интерфейса.</p>
+<p>Объявление слота в C++: </p><pre class="fragment">public slots:
+    void updateConfig(QString param,
+                      QString value,
+                      bool enable);
+</pre><p> В QML выполняется такая конструкция: </p><pre class="fragment">radio.updateConfig(param, value, enable);
+</pre><p> Объект <em>radio</em> добавляется в контекс QML в main.cpp: </p><pre class="fragment">Radiooooo radio;
+engine.rootContext()-&gt;setContextProperty("radio", &amp;radio);
+</pre> </div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

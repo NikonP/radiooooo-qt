@@ -1,0 +1,428 @@
+\hypertarget{classRadiooooo}{}\doxysection{Класс Radiooooo}
+\label{classRadiooooo}\index{Radiooooo@{Radiooooo}}
+
+
+Реализует взаимодействие с \href{https://radiooooo.app/}{\texttt{ https\+://radiooooo.\+app/}} и логику аудиоплеера  
+
+
+
+
+{\ttfamily \#include $<$radiooooo.\+h$>$}
+
+Граф наследования\+:Radiooooo\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRadiooooo}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые типы}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRadiooooo_aef4edad91ab779b2da881ae8e89c10e6}\label{classRadiooooo_aef4edad91ab779b2da881ae8e89c10e6}} 
+enum \{ {\bfseries IDLE}
+, {\bfseries PLAYING}
+, {\bfseries PAUSED}
+, {\bfseries DOWNLOADING}
+ \}
+\begin{DoxyCompactList}\small\item\em Все состояния аудиоплеера \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые слоты}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classRadiooooo_a55b9ae373d2b089d9d0235b5b4239a16}{load\+Config}} ()
+\begin{DoxyCompactList}\small\item\em Слот для загрузки настроек \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRadiooooo_af26bbcd1435e586ee4f3d743d571c6f7}{update\+Config}} (QString param, QString value, bool enable)
+\begin{DoxyCompactList}\small\item\em Слот для обновления настроек \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRadiooooo_add14b119dca32943cd501cbc88329ea6}{play\+Trigger}} (bool play)
+\begin{DoxyCompactList}\small\item\em Изменяет состояние аудиоплеера \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRadiooooo_a4b2fd97df8b8b1b17d723aa01677b21a}\label{classRadiooooo_a4b2fd97df8b8b1b17d723aa01677b21a}} 
+void \mbox{\hyperlink{classRadiooooo_a4b2fd97df8b8b1b17d723aa01677b21a}{skip\+Trigger}} ()
+\begin{DoxyCompactList}\small\item\em Пропускает трек \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRadiooooo_afaa6aef7d762f53b0e590cabec262aaf}{set\+Volume}} (int volume)
+\begin{DoxyCompactList}\small\item\em Устанавливает громкость \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRadiooooo_a75be9ed6acdd9fd09d81ab1ac71a2093}{state\+Changed}} (QMedia\+Player\+::\+State player\+State)
+\begin{DoxyCompactList}\small\item\em Запускает следующий трек когда текущий заканчивается \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRadiooooo_a726aa9d5301f364e97fae7e8a6d61f75}{duration\+Changed}} (qint64 new\+Duration)
+\begin{DoxyCompactList}\small\item\em Обновляет длительность трека \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRadiooooo_a9ca2a1c36b6631703a166ba3b37a720b}{update\+Progress}} (qint64 pos)
+\begin{DoxyCompactList}\small\item\em Считает прогресс трека и вызывает update\+Progress\+Bar. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classRadiooooo_a588b6952062481a84b9c70c8021dccb3}{get\+Quick\+Countries}} ()
+\begin{DoxyCompactList}\small\item\em Получение стран для быстрой настройки \end{DoxyCompactList}\item 
+QList$<$ QString $>$ \mbox{\hyperlink{classRadiooooo_a6a204e18f65746445cf9394ca1310f41}{get\+Moods}} ()
+\begin{DoxyCompactList}\small\item\em Получает список настроений \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRadiooooo_aebd644e69df05fa0299fb6444aa6c110}{get\+Min\+Decade}} ()
+\begin{DoxyCompactList}\small\item\em геттер для min\+Decade. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRadiooooo_af4dd0358721d62af20224fd702af24fc}{get\+Max\+Deacde}} ()
+\begin{DoxyCompactList}\small\item\em геттер для max\+Decade. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Сигналы}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRadiooooo_a93dbeffe542c3c360b618f238eab9370}{update\+Progress\+Bar}} (double progress)
+\begin{DoxyCompactList}\small\item\em Обновлет прогресс бар \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRadiooooo_ad5f84547114dcc1f0e7e02ab02e69d52}{update\+Status\+Msg}} (QString message)
+\begin{DoxyCompactList}\small\item\em Обновляет сообщение со статусом \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRadiooooo_ac858a8e6164ce86d1d2c1b05bea806a3}{force\+Pause}} ()
+\begin{DoxyCompactList}\small\item\em Обнолвет состояние кнопки \char`\"{}play/pause\char`\"{} в QML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRadiooooo_aaab245e2659a4f48506cb97513e6c1df}{Radiooooo}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRadiooooo}{Radiooooo}} -\/ дефолтный констуктор класса QObject. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRadiooooo_a6b283470604c184b63fbacf5606f8d8f}\label{classRadiooooo_a6b283470604c184b63fbacf5606f8d8f}} 
+int \mbox{\hyperlink{classRadiooooo_a6b283470604c184b63fbacf5606f8d8f}{state}} = IDLE
+\begin{DoxyCompactList}\small\item\em Текущее состояние аудиоплеера \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+QJson\+Object \mbox{\hyperlink{classRadiooooo_af65a93a3dd79fb95d2ae19bc5342f191}{get\+Song\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Получает данные через API \mbox{\hyperlink{classRadiooooo}{Radiooooo}}. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classRadiooooo_a54f6a306bc843e6b3f7d471a2aecb459}{get\+Countries}} (QString decade)
+\begin{DoxyCompactList}\small\item\em Получает доступные исокоды \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classRadiooooo_a6e69a2a9cc307d47f4e5b70929e170b0}{download\+File}} (QString path, QString url)
+\begin{DoxyCompactList}\small\item\em Скачивает файл по URL. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRadiooooo_a3f679ac8a513529670baf1a76e37000c}{save\+File}} (QString path, QByte\+Array data)
+\begin{DoxyCompactList}\small\item\em Сохраняет файл \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRadiooooo_a534f8c42b36544da767b49175da1eaf8}\label{classRadiooooo_a534f8c42b36544da767b49175da1eaf8}} 
+void \mbox{\hyperlink{classRadiooooo_a534f8c42b36544da767b49175da1eaf8}{play\+Next}} ()
+\begin{DoxyCompactList}\small\item\em Сохраняет файл и запускает его через QMedia\+Player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRadiooooo_ad8cd26c50b7b06e363f6f1415dd592b2}\label{classRadiooooo_ad8cd26c50b7b06e363f6f1415dd592b2}} 
+const QString \mbox{\hyperlink{classRadiooooo_ad8cd26c50b7b06e363f6f1415dd592b2}{base\+API}} = \char`\"{}https\+://radiooooo.\+app\char`\"{}
+\begin{DoxyCompactList}\small\item\em Корневой эндпоинт для API \mbox{\hyperlink{classRadiooooo}{Radiooooo}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRadiooooo_a3b07e1e050610d643d37561418cbf939}\label{classRadiooooo_a3b07e1e050610d643d37561418cbf939}} 
+const QString \mbox{\hyperlink{classRadiooooo_a3b07e1e050610d643d37561418cbf939}{get\+Codes\+Url}} = \mbox{\hyperlink{classRadiooooo_ad8cd26c50b7b06e363f6f1415dd592b2}{base\+API}} + \char`\"{}/country/mood?decade=\char`\"{}
+\begin{DoxyCompactList}\small\item\em Эндпоинт для получения исокодов \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRadiooooo_ad3d3f433fe14d0f755a907d7af95e42e}\label{classRadiooooo_ad3d3f433fe14d0f755a907d7af95e42e}} 
+const QString \mbox{\hyperlink{classRadiooooo_ad3d3f433fe14d0f755a907d7af95e42e}{get\+Song\+Url}} = \mbox{\hyperlink{classRadiooooo_ad8cd26c50b7b06e363f6f1415dd592b2}{base\+API}} + \char`\"{}/play\char`\"{}
+\begin{DoxyCompactList}\small\item\em Эндпоинт для получения аудиофайла \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRadiooooo_a8d08747879bcb9b3c33c10fb4ebe9250}\label{classRadiooooo_a8d08747879bcb9b3c33c10fb4ebe9250}} 
+QString \mbox{\hyperlink{classRadiooooo_a8d08747879bcb9b3c33c10fb4ebe9250}{now\+Playing}}
+\begin{DoxyCompactList}\small\item\em Строка, которая хранит название трека и название группы \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRadiooooo_a89f61e521b1ae111f978787d00312665}\label{classRadiooooo_a89f61e521b1ae111f978787d00312665}} 
+qint64 \mbox{\hyperlink{classRadiooooo_a89f61e521b1ae111f978787d00312665}{audio\+Duration}} = 0
+\begin{DoxyCompactList}\small\item\em Продолжительность трека \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRadiooooo_a39978f998fdde441aaaa7ad795f7a8e7}\label{classRadiooooo_a39978f998fdde441aaaa7ad795f7a8e7}} 
+\mbox{\hyperlink{classConfigurator}{Configurator}} $\ast$ \mbox{\hyperlink{classRadiooooo_a39978f998fdde441aaaa7ad795f7a8e7}{cfg}}
+\begin{DoxyCompactList}\small\item\em Указатель на \mbox{\hyperlink{classConfigurator}{Configurator}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRadiooooo_ae944c79aea8d601d4e221f9e791b6d3e}\label{classRadiooooo_ae944c79aea8d601d4e221f9e791b6d3e}} 
+QMedia\+Player $\ast$ \mbox{\hyperlink{classRadiooooo_ae944c79aea8d601d4e221f9e791b6d3e}{media\+Player}}
+\begin{DoxyCompactList}\small\item\em Указатель на QMedia\+Player (класс Qt для работы с медиафайлами) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRadiooooo_a82425a09abc2f6930d05dbd23cc067ed}\label{classRadiooooo_a82425a09abc2f6930d05dbd23cc067ed}} 
+QNetwork\+Access\+Manager $\ast$ \mbox{\hyperlink{classRadiooooo_a82425a09abc2f6930d05dbd23cc067ed}{net\+Manager}}
+\begin{DoxyCompactList}\small\item\em Указатель на QNetwork\+Access\+Manager (класс Qt для работы с сетью) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Реализует взаимодействие с \href{https://radiooooo.app/}{\texttt{ https\+://radiooooo.\+app/}} и логику аудиоплеера 
+
+\begin{DoxyNote}{Заметки}
+Функции слоты класса \mbox{\hyperlink{classRadiooooo}{Radiooooo}} доступны из QML
+
+Взаимодействие с объектом класса \mbox{\hyperlink{classConfigurator}{Configurator}} происходит при помощи сигналов 
+\end{DoxyNote}
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classRadiooooo_aaab245e2659a4f48506cb97513e6c1df}\label{classRadiooooo_aaab245e2659a4f48506cb97513e6c1df}} 
+\index{Radiooooo@{Radiooooo}!Radiooooo@{Radiooooo}}
+\index{Radiooooo@{Radiooooo}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{Radiooooo()}{Radiooooo()}}
+{\footnotesize\ttfamily Radiooooo\+::\+Radiooooo (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{classRadiooooo}{Radiooooo}} -\/ дефолтный констуктор класса QObject. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em parent} & -\/ указатель на родительский QObject \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classRadiooooo_a6e69a2a9cc307d47f4e5b70929e170b0}\label{classRadiooooo_a6e69a2a9cc307d47f4e5b70929e170b0}} 
+\index{Radiooooo@{Radiooooo}!downloadFile@{downloadFile}}
+\index{downloadFile@{downloadFile}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{downloadFile()}{downloadFile()}}
+{\footnotesize\ttfamily QString Radiooooo\+::download\+File (\begin{DoxyParamCaption}\item[{QString}]{path,  }\item[{QString}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Скачивает файл по URL. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & -\/ имя файла для сохранения \\
+\hline
+{\em url} & -\/ url откуда скачать файл \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+QString -\/ полный путь к файлу 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRadiooooo_a726aa9d5301f364e97fae7e8a6d61f75}\label{classRadiooooo_a726aa9d5301f364e97fae7e8a6d61f75}} 
+\index{Radiooooo@{Radiooooo}!durationChanged@{durationChanged}}
+\index{durationChanged@{durationChanged}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{durationChanged}{durationChanged}}
+{\footnotesize\ttfamily void Radiooooo\+::duration\+Changed (\begin{DoxyParamCaption}\item[{qint64}]{new\+Duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Обновляет длительность трека 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em new\+Duration} & -\/ новая длительность трека \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRadiooooo_ac858a8e6164ce86d1d2c1b05bea806a3}\label{classRadiooooo_ac858a8e6164ce86d1d2c1b05bea806a3}} 
+\index{Radiooooo@{Radiooooo}!forcePause@{forcePause}}
+\index{forcePause@{forcePause}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{forcePause}{forcePause}}
+{\footnotesize\ttfamily void Radiooooo\+::force\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Обнолвет состояние кнопки \char`\"{}play/pause\char`\"{} в QML. 
+
+\begin{DoxyRefDesc}{Необходимо сделать}
+\item[\mbox{\hyperlink{todo__todo000002}{Необходимо сделать}}]Переписать без вызова QML из C++ (например при помощи проверки флага в QML) \end{DoxyRefDesc}
+\mbox{\Hypertarget{classRadiooooo_a54f6a306bc843e6b3f7d471a2aecb459}\label{classRadiooooo_a54f6a306bc843e6b3f7d471a2aecb459}} 
+\index{Radiooooo@{Radiooooo}!getCountries@{getCountries}}
+\index{getCountries@{getCountries}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{getCountries()}{getCountries()}}
+{\footnotesize\ttfamily QJson\+Object Radiooooo\+::get\+Countries (\begin{DoxyParamCaption}\item[{QString}]{decade }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Получает доступные исокоды 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em Десятилетие} & (например 1970, 1980) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+QJson\+Object со списком кодов
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+Не проверяется кратность 
+\end{DoxyNote}
+\mbox{\Hypertarget{classRadiooooo_af4dd0358721d62af20224fd702af24fc}\label{classRadiooooo_af4dd0358721d62af20224fd702af24fc}} 
+\index{Radiooooo@{Radiooooo}!getMaxDeacde@{getMaxDeacde}}
+\index{getMaxDeacde@{getMaxDeacde}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{getMaxDeacde}{getMaxDeacde}}
+{\footnotesize\ttfamily int Radiooooo\+::get\+Max\+Deacde (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+геттер для max\+Decade. 
+
+\begin{DoxyReturn}{Возвращает}
+max\+Decade из \mbox{\hyperlink{classConfigurator}{Configurator}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRadiooooo_aebd644e69df05fa0299fb6444aa6c110}\label{classRadiooooo_aebd644e69df05fa0299fb6444aa6c110}} 
+\index{Radiooooo@{Radiooooo}!getMinDecade@{getMinDecade}}
+\index{getMinDecade@{getMinDecade}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{getMinDecade}{getMinDecade}}
+{\footnotesize\ttfamily int Radiooooo\+::get\+Min\+Decade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+геттер для min\+Decade. 
+
+\begin{DoxyReturn}{Возвращает}
+min\+Decade из \mbox{\hyperlink{classConfigurator}{Configurator}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRadiooooo_a6a204e18f65746445cf9394ca1310f41}\label{classRadiooooo_a6a204e18f65746445cf9394ca1310f41}} 
+\index{Radiooooo@{Radiooooo}!getMoods@{getMoods}}
+\index{getMoods@{getMoods}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{getMoods}{getMoods}}
+{\footnotesize\ttfamily QList$<$ QString $>$ Radiooooo\+::get\+Moods (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Получает список настроений 
+
+\begin{DoxyReturn}{Возвращает}
+QList строк 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRadiooooo_a588b6952062481a84b9c70c8021dccb3}\label{classRadiooooo_a588b6952062481a84b9c70c8021dccb3}} 
+\index{Radiooooo@{Radiooooo}!getQuickCountries@{getQuickCountries}}
+\index{getQuickCountries@{getQuickCountries}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{getQuickCountries}{getQuickCountries}}
+{\footnotesize\ttfamily QString Radiooooo\+::get\+Quick\+Countries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Получение стран для быстрой настройки 
+
+\begin{DoxyReturn}{Возвращает}
+QString -\/ строка со списком 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRadiooooo_af65a93a3dd79fb95d2ae19bc5342f191}\label{classRadiooooo_af65a93a3dd79fb95d2ae19bc5342f191}} 
+\index{Radiooooo@{Radiooooo}!getSongInfo@{getSongInfo}}
+\index{getSongInfo@{getSongInfo}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{getSongInfo()}{getSongInfo()}}
+{\footnotesize\ttfamily QJson\+Object Radiooooo\+::get\+Song\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Получает данные через API \mbox{\hyperlink{classRadiooooo}{Radiooooo}}. 
+
+\begin{DoxyReturn}{Возвращает}
+QJson\+Object со всей информацией о треке 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRadiooooo_a55b9ae373d2b089d9d0235b5b4239a16}\label{classRadiooooo_a55b9ae373d2b089d9d0235b5b4239a16}} 
+\index{Radiooooo@{Radiooooo}!loadConfig@{loadConfig}}
+\index{loadConfig@{loadConfig}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{loadConfig}{loadConfig}}
+{\footnotesize\ttfamily QString Radiooooo\+::load\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Слот для загрузки настроек 
+
+\begin{DoxyReturn}{Возвращает}
+QString с настройками 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRadiooooo_add14b119dca32943cd501cbc88329ea6}\label{classRadiooooo_add14b119dca32943cd501cbc88329ea6}} 
+\index{Radiooooo@{Radiooooo}!playTrigger@{playTrigger}}
+\index{playTrigger@{playTrigger}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{playTrigger}{playTrigger}}
+{\footnotesize\ttfamily void Radiooooo\+::play\+Trigger (\begin{DoxyParamCaption}\item[{bool}]{play }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Изменяет состояние аудиоплеера 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em play} & -\/ запустить (true) или отсановить (false) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRadiooooo_a3f679ac8a513529670baf1a76e37000c}\label{classRadiooooo_a3f679ac8a513529670baf1a76e37000c}} 
+\index{Radiooooo@{Radiooooo}!saveFile@{saveFile}}
+\index{saveFile@{saveFile}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{saveFile()}{saveFile()}}
+{\footnotesize\ttfamily bool Radiooooo\+::save\+File (\begin{DoxyParamCaption}\item[{QString}]{path,  }\item[{QByte\+Array}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Сохраняет файл 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & -\/ путь куда сохранить \\
+\hline
+{\em data} & -\/ QByte\+Array содержимое файла \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если удалось сохранить 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRadiooooo_afaa6aef7d762f53b0e590cabec262aaf}\label{classRadiooooo_afaa6aef7d762f53b0e590cabec262aaf}} 
+\index{Radiooooo@{Radiooooo}!setVolume@{setVolume}}
+\index{setVolume@{setVolume}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{setVolume}{setVolume}}
+{\footnotesize\ttfamily void Radiooooo\+::set\+Volume (\begin{DoxyParamCaption}\item[{int}]{volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Устанавливает громкость 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em volume} & -\/ громкость (0-\/100) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRadiooooo_a75be9ed6acdd9fd09d81ab1ac71a2093}\label{classRadiooooo_a75be9ed6acdd9fd09d81ab1ac71a2093}} 
+\index{Radiooooo@{Radiooooo}!stateChanged@{stateChanged}}
+\index{stateChanged@{stateChanged}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{stateChanged}{stateChanged}}
+{\footnotesize\ttfamily void Radiooooo\+::state\+Changed (\begin{DoxyParamCaption}\item[{QMedia\+Player\+::\+State}]{player\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Запускает следующий трек когда текущий заканчивается 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em player\+State} & -\/ состояние плеера \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRadiooooo_af26bbcd1435e586ee4f3d743d571c6f7}\label{classRadiooooo_af26bbcd1435e586ee4f3d743d571c6f7}} 
+\index{Radiooooo@{Radiooooo}!updateConfig@{updateConfig}}
+\index{updateConfig@{updateConfig}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{updateConfig}{updateConfig}}
+{\footnotesize\ttfamily void Radiooooo\+::update\+Config (\begin{DoxyParamCaption}\item[{QString}]{param,  }\item[{QString}]{value,  }\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Слот для обновления настроек 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em param} & -\/ имя параметра \\
+\hline
+{\em value} & -\/ значение \\
+\hline
+{\em enable} & -\/ флаг, если true, то добавить настройку, иначе удалить \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRadiooooo_a9ca2a1c36b6631703a166ba3b37a720b}\label{classRadiooooo_a9ca2a1c36b6631703a166ba3b37a720b}} 
+\index{Radiooooo@{Radiooooo}!updateProgress@{updateProgress}}
+\index{updateProgress@{updateProgress}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{updateProgress}{updateProgress}}
+{\footnotesize\ttfamily void Radiooooo\+::update\+Progress (\begin{DoxyParamCaption}\item[{qint64}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Считает прогресс трека и вызывает update\+Progress\+Bar. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em pos} & -\/ прошедшее время трека \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRadiooooo_a93dbeffe542c3c360b618f238eab9370}\label{classRadiooooo_a93dbeffe542c3c360b618f238eab9370}} 
+\index{Radiooooo@{Radiooooo}!updateProgressBar@{updateProgressBar}}
+\index{updateProgressBar@{updateProgressBar}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{updateProgressBar}{updateProgressBar}}
+{\footnotesize\ttfamily void Radiooooo\+::update\+Progress\+Bar (\begin{DoxyParamCaption}\item[{double}]{progress }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Обновлет прогресс бар 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em progress} & -\/ процент завершения \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRadiooooo_ad5f84547114dcc1f0e7e02ab02e69d52}\label{classRadiooooo_ad5f84547114dcc1f0e7e02ab02e69d52}} 
+\index{Radiooooo@{Radiooooo}!updateStatusMsg@{updateStatusMsg}}
+\index{updateStatusMsg@{updateStatusMsg}!Radiooooo@{Radiooooo}}
+\doxysubsubsection{\texorpdfstring{updateStatusMsg}{updateStatusMsg}}
+{\footnotesize\ttfamily void Radiooooo\+::update\+Status\+Msg (\begin{DoxyParamCaption}\item[{QString}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Обновляет сообщение со статусом 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & -\/ строка с сообщением \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+radiooooo.\+h\item 
+radiooooo.\+cpp\end{DoxyCompactItemize}

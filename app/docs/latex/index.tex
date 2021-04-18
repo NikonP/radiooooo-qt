@@ -1,0 +1,27 @@
+\label{index_md_DOCS}%
+\Hypertarget{index_md_DOCS}%
+ \hypertarget{index_autotoc_md1}{}\doxysection{Классы\+:}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classConfigurator}{Configurator}} -\/ класс для работы с настройками приложения
+\item \mbox{\hyperlink{classRadiooooo}{Radiooooo}} -\/ класс для работы с API и аудиофайлами
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{Заголовочные файлы\+:}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{configurator_8h_source}{configurator.\+h}} -\/ заголовочный файл \mbox{\hyperlink{classConfigurator}{класса Configurator}}
+\item \mbox{\hyperlink{radiooooo_8h_source}{radiooooo.\+h}} -\/ заголовочный файл \mbox{\hyperlink{classRadiooooo}{класса Radiooooo}}
+\item \mbox{\hyperlink{defaults_8h_source}{defaults.\+h}} -\/ заголовочный файл со значениями по умолчанию
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{Сигналы и слоты}\label{index_autotoc_md3}
+Ассинхронные взаимодействия (в основном с UI) происходят при помощи сигналов и слотов. Например, у \mbox{\hyperlink{classRadiooooo}{класса Radiooooo}} есть \mbox{\hyperlink{classRadiooooo_af26bbcd1435e586ee4f3d743d571c6f7}{слот update\+Config}} для получения сигнала из QML интерфейса.
+
+Объявление слота в C++\+: \begin{DoxyVerb}public slots:
+    void updateConfig(QString param,
+                      QString value,
+                      bool enable);
+\end{DoxyVerb}
+ В QML выполняется такая конструкция\+: \begin{DoxyVerb}radio.updateConfig(param, value, enable);
+\end{DoxyVerb}
+ Объект {\itshape radio} добавляется в контекс QML в main.\+cpp\+: \begin{DoxyVerb}Radiooooo radio;
+engine.rootContext()->setContextProperty("radio", &radio);
+\end{DoxyVerb}
+ 

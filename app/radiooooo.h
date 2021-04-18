@@ -15,60 +15,192 @@
 #include <QEventLoop>
 #include "configurator.h"
 
-/*
- * Radiooooo class
- * implements interaction with https://radiooooo.app/ and audio player logic
+/**
+ * @class Radiooooo
+ *
+ * @brief Реализует взаимодействие с https://radiooooo.app/ и логику аудиоплеера
+ *
+ * @note Функции слоты класса Radiooooo доступны из QML
+ *
+ * @note Взаимодействие с объектом класса Configurator происходит при помощи сигналов
  */
 class Radiooooo : public QObject
 {
     Q_OBJECT
 public:
+    /**
+     * @brief Radiooooo - дефолтный констуктор класса QObject
+     *
+     * @param parent - указатель на родительский QObject
+     */
     explicit Radiooooo(QObject *parent = nullptr);
-    enum {IDLE, PLAYING, PAUSED, DOWNLOADING}; // audio player states
-    int state = IDLE; // current state
+
+    /**
+     * @brief Все состояния аудиоплеера
+     */
+    enum {IDLE, PLAYING, PAUSED, DOWNLOADING};
+    /**
+     * @brief Текущее состояние аудиоплеера
+     */
+    int state = IDLE;
 
 private:
-    const QString baseAPI = "https://radiooooo.app"; // api root url
-    const QString getCodesUrl = baseAPI + "/country/mood?decade="; // get isocodes endpoint
-    const QString getSongUrl = baseAPI + "/play"; // get songs endpoint
-    QString nowPlaying; // currently playing <song name> + <artist>
-    qint64 audioDuration = 0; // current song duration (for progress bar)
+    /**
+     * @brief Корневой эндпоинт для API Radiooooo
+     */
+    const QString baseAPI = "https://radiooooo.app";
+    /**
+     * @brief Эндпоинт для получения исокодов
+     */
+    const QString getCodesUrl = baseAPI + "/country/mood?decade=";
+    /**
+     * @brief Эндпоинт для получения аудиофайла
+     */
+    const QString getSongUrl = baseAPI + "/play";
+    /**
+     * @brief Строка, которая хранит название трека и название группы
+     */
+    QString nowPlaying;
+    /**
+     * @brief Продолжительность трека
+     */
+    qint64 audioDuration = 0;
 
-    Configurator *cfg; // configuration stuff
-    QMediaPlayer *mediaPlayer; // actually media player :/
-    QNetworkAccessManager *netManager; // network stuff
+    /**
+     * @brief Указатель на Configurator
+     */
+    Configurator *cfg;
+    /**
+     * @brief Указатель на QMediaPlayer (класс Qt для работы с медиафайлами)
+     */
+    QMediaPlayer *mediaPlayer;
+    /**
+     * @brief Указатель на QNetworkAccessManager (класс Qt для работы с сетью)
+     */
+    QNetworkAccessManager *netManager;
 
-    QJsonObject getSongInfo(); // returns json data from Radiooooo (song name, url, etc)
-    QJsonObject getCountries(QString decade); // gets available isocodes
-    QString downloadFile(QString path, QString url); // downloads audio file from url, returns filepath if success
-    bool saveFile(QString path, QByteArray data); // saves audio file, returns true if success
+    /**
+     * @brief Получает данные через API Radiooooo
+     * @return QJsonObject со всей информацией о треке
+     */
+    QJsonObject getSongInfo();
+    /**
+     * @brief Получает доступные исокоды
+     * @param Десятилетие (например 1970, 1980)
+     * @return QJsonObject со списком кодов
+     *
+     * @note Не проверяется кратность
+     */
+    QJsonObject getCountries(QString decade);
+    /**
+     * @brief Скачивает файл по URL
+     * @param path - имя файла для сохранения
+     * @param url - url откуда скачать файл
+     * @return QString - полный путь к файлу
+     */
+    QString downloadFile(QString path, QString url);
 
-    void playNext(); // Downloads new file and makes QMediaPlayer to play it
+    /**
+     * @brief Сохраняет файл
+     * @param path - путь куда сохранить
+     * @param data - QByteArray содержимое файла
+     * @return true, если удалось сохранить
+     */
+    bool saveFile(QString path, QByteArray data);
+
+    /**
+     * @brief Сохраняет файл и запускает его через QMediaPlayer
+     */
+    void playNext();
 
 signals:
+    /**
+     * @brief Обновлет прогресс бар
+     * @param progress - процент завершения
+     */
     void updateProgressBar(double progress); // 0 - 0%, 1 - 100%
+
+    /**
+     * @brief Обновляет сообщение со статусом
+     * @param message - строка с сообщением
+     */
     void updateStatusMsg(QString message); // set status message
-    void forcePause(); // updates play/pause button
+
+    /**
+     * @brief Обнолвет состояние кнопки "play/pause" в QML
+     *
+     * @todo Переписать без вызова QML из C++ (например при помощи проверки флага в QML)
+     */
+    void forcePause();
 
 public slots:
-    QString loadConfig(); // loading config from json file
+    /**
+     * @brief Слот для загрузки настроек
+     * @return QString с настройками
+     */
+    QString loadConfig();
 
     // updates param in config, adds value if enable==true, removes otherwise
+    /**
+     * @brief Слот для обновления настроек
+     * @param param - имя параметра
+     * @param value - значение
+     * @param enable - флаг, если true, то добавить настройку, иначе удалить
+     */
     void updateConfig(QString param,
                       QString value,
                       bool enable);
 
-    void playTrigger(bool play); // makes audio player to pause or play
-    void skipTrigger(); // makes audio player to skip song
-    void setVolume(int volume); // sets audio player volume
+    /**
+     * @brief Изменяет состояние аудиоплеера
+     * @param play - запустить (true) или отсановить (false)
+     */
+    void playTrigger(bool play);
+    /**
+     * @brief Пропускает трек
+     */
+    void skipTrigger();
+    /**
+     * @brief Устанавливает громкость
+     * @param volume - громкость (0-100)
+     */
+    void setVolume(int volume);
 
-    void stateChanged(QMediaPlayer::State playerState); // starts next song when prev ends
-    void durationChanged(qint64 newDuration); // updates audioDuration
-    void updateProgress(qint64 pos); // calcs progress status and calls updateProgressBar
+    /**
+     * @brief Запускает следующий трек когда текущий заканчивается
+     * @param playerState - состояние плеера
+     */
+    void stateChanged(QMediaPlayer::State playerState);
+    /**
+     * @brief Обновляет длительность трека
+     * @param newDuration - новая длительность трека
+     */
+    void durationChanged(qint64 newDuration);
+    /**
+     * @brief Считает прогресс трека и вызывает updateProgressBar
+     * @param pos - прошедшее время трека
+     */
+    void updateProgress(qint64 pos);
 
-    QString getQuickCountries(); // returns countries for quick setup (for qml)
-    QList<QString> getMoods(); // returns moods list (for qml)
+    /**
+     * @brief Получение стран для быстрой настройки
+     * @return QString - строка со списком
+     */
+    QString getQuickCountries();
+    /**
+     * @brief Получает список настроений
+     * @return QList строк
+     */
+    QList<QString> getMoods();
+    /**
+     * @brief геттер для minDecade
+     * @return minDecade из Configurator
+     */
     int getMinDecade();
+    /**
+     * @brief геттер для maxDecade
+     * @return maxDecade из Configurator
+     */
     int getMaxDeacde();
 
 };
