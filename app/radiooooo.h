@@ -152,8 +152,8 @@ private:
         bool enable);
 
         /**
-        * @brief Изменяет состояние аудиоплеера
-        * @param play - запустить (true) или остановить (false)
+        * /brief Изменяет состояние аудиоплеера
+        * /param play - запустить (true) или остановить (false)
         */
         void playTrigger(bool play);
         /**
