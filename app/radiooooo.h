@@ -153,7 +153,7 @@ private:
 
         /**
         * @brief Изменяет состояние аудиоплеера
-        * @param play - запустить (true) или отсановить (false)
+        * @param play - запустить (true) или остановить (false)
         */
         void playTrigger(bool play);
         /**
