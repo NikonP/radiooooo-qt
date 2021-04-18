@@ -24,7 +24,7 @@
 
     radio.updateConfig(param, value, enable);
 
-Объект *radio* добавляется в контекс QML в main.cpp:
+Объект *radio* добавляется в контекст QML в main.cpp:
 
     Radiooooo radio;
     engine.rootContext()->setContextProperty("radio", &radio);
